@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baloch Scholorship Network</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <h4><a href="scholarships.html">Scholarships</a></h4>
+        <h4><a href="contactus.html">Contact US</a></h4>
+        <h4><a href="aboutus.html">About Us</a></h4>
+        <h4><a href="#" onclick="checkCode()">Admin</a></h4>
+    </nav>
+    <input type="text" id="searchBox" placeholder="Search by country">
+    <select id="classFilter">
+        <option value="">All Classes</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    <h1>View Divs</h1>
+    <div id="divContainer"></div>
+    <script>
+        function checkCode() {
+            var code = prompt("Please enter the code:");
+            if (code === '1111') {
+                window.location.href = 'admin.html';
+            } else {
+                alert("Incorrect code. Access denied.");
+               
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
