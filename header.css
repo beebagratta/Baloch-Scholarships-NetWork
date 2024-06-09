@@ -1,0 +1,58 @@
+
+header{
+    height: 10vh;
+    width: 100%;
+    background:#009688 ;
+}
+header nav{
+    height: 100%;
+    width: 90%;
+}
+header nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
+    width: 100%;
+}
+header nav ul li{
+    list-style: none;
+    display: flex;
+    margin-right: 12px;
+    overflow: hidden;
+  
+}
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+
+
+}
+header nav ul li a::after{
+    content: "";
+    height: 100px;
+    width: 120px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    margin-right: 10px;
+    transition: all ease 1s;
+    border-radius: 10px;
+    z-index: 0;
+
+}
+header nav ul li a:hover::after{
+    transform: translatey(-100px);
+    z-index: -2;
+}
+header nav ul li a:hover{
+    color: white;
+    z-index: 10;
+}

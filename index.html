@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baloch Scholorship Network</title>
+    <title>Baloch Scholarship Network</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
 </head>
+
 <body>
     <header>
         <nav>
-            <h4><a href="scholarships.html">Scholarships</a></h4>
-            <h4><a href="contactus.html">Contact US</a></h4>
-            <h4><a href="aboutus.html">About Us</a></h4>
+            <ul>
+                <li><a href="#">Scholarships</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
         </nav>
     </header>
-  
-  <main>
-    <div class="container">
-        <div class="scholarship">
-            <p>Name: Lazio Disco Scholarship Italy: </p>
-            <p>Description:It is a need base scholarships,  This scholarships offer to those students will get admission in anu University in the region of Lazio, Italy.</p>
-            <p>Start in:10/07/00</p>
-            <p>Finish: 10/08/00</p>
+    <main>
+        <div class="searchbox">
+            <input type="text" placeholder="Search The Country" id="searchbar">
         </div>
-    </div>
-  </main>
-
-    
+        <div id="scholarshipcont">
+            <div class="scholarship">
+                <p>Name: Scholarship Name</p>                
+                <p>Description: This is a scholarship</p>                
+                <p>Starting date: 0/0/0</p>   
+                <label for="country">Country:</label>             
+                <input type="text" readonly class="country" value="Itlay"> 
+                <label for="classvalue">Class:</label>            
+                <input type="text" value="10" class="classvalue" readonly> 
+                <br>  
+                <a href="">For More Info Click Here.</a>
+            </div>
+         
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
+
 </html>
