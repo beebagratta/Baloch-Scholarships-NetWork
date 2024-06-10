@@ -31,7 +31,7 @@ scholarshipBoxes.forEach(box => {
         const description = this.querySelector('.description').textContent.replace('Description : ', '');
         const linkUrl = this.querySelector('.link a').href;
 
-        clickname.textContent = name;
+        clickname.textContent = `Name: ${name}`;
         clickcountry.textContent = `Country: ${country}`;
         clickclass.textContent = `Class: ${classValue}`;
         clickstarting.textContent = `Start Date: ${startingDate}`;
