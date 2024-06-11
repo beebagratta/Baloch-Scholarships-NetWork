@@ -1,28 +1,51 @@
-
-header{
+header {
     height: 10vh;
     width: 100%;
-    background:#009688 ;
+    background: #82d4cc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
-header nav{
+
+header nav {
     height: 100%;
     width: 90%;
-}
-header nav ul{
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     height: 100%;
     width: 100%;
-}
-header nav ul li{
     list-style: none;
-    display: flex;
-    margin-right: 12px;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+    gap: 20px;
     overflow: hidden;
-  
 }
-header nav ul li a{
+
+header nav ul.show {
+    display: flex;
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+header nav ul li {
+    margin-right: 12px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li a {
     text-decoration: none;
     color: black;
     border: 1px solid black;
@@ -31,29 +54,125 @@ header nav ul li a{
     font-size: 16px;
     font-weight: 560;
     position: relative;
+    transition: background-color 0.3s, color 0.3s;
     overflow: hidden;
-
-
 }
-header nav ul li a::after{
+
+header nav ul li a::after {
     content: "";
     height: 100px;
     width: 120px;
     background: #000;
     position: absolute;
     left: 0;
-    bottom: -100px;
-    margin-right: 10px;
+    bottom: -120px;
     transition: all ease 1s;
     border-radius: 10px;
     z-index: 0;
-
 }
-header nav ul li a:hover::after{
-    transform: translatey(-100px);
+
+header nav ul li a:hover::after {
+    transform: translateY(-100px);
     z-index: -1;
 }
-header nav ul li a:hover{
+
+header nav ul li a:hover {
     color: white;
     z-index: 10;
 }
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    cursor: pointer;
+}
+
+#menu {
+    font-size: 30px;
+}
+
+
+@media (min-width: 578px) {
+    header nav {
+        display: flex;
+    }
+    #menu {
+        display: none;
+    }
+} 
+
+
+@media (max-width: 577px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        background: #82d4cc;
+        height: 40vh;
+        width: 100%;
+        margin-top: 250px;
+        transition: all 0.3s ease-in-out;
+    }
+    header nav ul li{
+        height: 100%;
+    }
+    header nav ul.show {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    header nav ul li a {
+        display: block;
+        text-align: center;
+    }
+
+    #menu {
+        display: block;
+    }
+    .scholarshipcont2{
+        height: 300px;
+        overflow: scroll;
+        
+    }
+    .scholarship{
+        height: 130px;
+    }
+    
+   
+    html{
+        font-size: 14px;
+    }
+}
+/* @media (max-width:570px){
+    .scholarship{
+        height: 130px;
+    }
+} */
+
+@media (max-width: 400px) {
+    html{
+        font-size: 15px;
+        font-weight: 200;
+    }
+    
+    header {
+        height: auto;
+        padding: 10px;
+    }
+    
+    header nav {
+        flex-direction: column;
+    }
+    
+    header nav ul {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+} 

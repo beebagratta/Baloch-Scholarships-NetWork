@@ -1,13 +1,19 @@
-document.querySelector('#searchbar').addEventListener('input', function() {
+const searchbar=document.querySelector('#searchbar').addEventListener('input', function () {
     const searchQuery = this.value.toLowerCase();
     const scholarships = document.querySelectorAll('.scholarship');
 
-    scholarships.forEach(function(div) {
+    scholarships.forEach(function (div) {
         const countryName = div.querySelector('.country').value.toLowerCase();
-        if (countryName.includes(searchQuery)) {
+        const scholarshipcont2=document.querySelector(".scholarshipcont2")
+        if (searchQuery === "") {
+            div.style.display = 'none';
+            scholarshipcont2.style.display = 'none';
+        } else if (countryName.includes(searchQuery)) {
             div.style.display = 'block';
+            scholarshipcont2.style.display = 'block';
         } else {
             div.style.display = 'none';
+            scholarshipcont2.style.display = 'none';
         }
     });
 });
@@ -20,9 +26,8 @@ const clickstarting = document.querySelector('.clickstarting');
 const clickend = document.querySelector('.clickend');
 const clickdesc = document.querySelector('.clickdesc');
 const clicklink = document.querySelector('.clicklink');
-
 scholarshipBoxes.forEach(box => {
-    box.addEventListener('click', function() {
+    box.addEventListener('click', function () {
         const name = this.querySelector('.name').textContent.replace('Name : ', '');
         const country = this.querySelector('.country').value;
         const classValue = this.querySelector('.class').value;
@@ -39,5 +44,13 @@ scholarshipBoxes.forEach(box => {
         clickdesc.textContent = description;
         clicklink.textContent = 'Click here for more info';
         clicklink.href = linkUrl;
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.getElementById('menu');
+    const navUl = document.querySelector('header nav ul');
+
+    menuIcon.addEventListener('click', () => {
+        navUl.classList.toggle('show');
     });
 });
