@@ -1,56 +1,76 @@
-const searchbar=document.querySelector('#searchbar').addEventListener('input', function () {
-    const searchQuery = this.value.toLowerCase();
-    const scholarships = document.querySelectorAll('.scholarship');
+document.addEventListener('DOMContentLoaded', function() {
+    // Example of adding new scholarships
+    addScholarship('New Scholarship', 'Italy', '10', '2024-01-01', '2024-12-31', 'This is a sample description.', '#');
+   
+    
+    // Event listener for the menu button
+    const menuButton = document.getElementById('menu');
+    const navMenu = document.querySelector('nav ul');
 
-    scholarships.forEach(function (div) {
-        const countryName = div.querySelector('.country').value.toLowerCase();
-        const scholarshipcont2=document.querySelector(".scholarshipcont2")
-        if (searchQuery === "") {
-            div.style.display = 'none';
-            scholarshipcont2.style.display = 'none';
-        } else if (countryName.includes(searchQuery)) {
-            div.style.display = 'block';
-            scholarshipcont2.style.display = 'block';
-        } else {
-            div.style.display = 'none';
-            scholarshipcont2.style.display = 'none';
+    menuButton.addEventListener('click', function() {
+        navMenu.classList.toggle('show');
+    });
+
+    // Search functionality
+    const searchbar = document.getElementById('searchbar');
+    searchbar.addEventListener('input', function() {
+        const filter = searchbar.value.toLowerCase();
+        const scholarships = document.querySelectorAll('.scholarship');
+        
+        scholarships.forEach(scholarship => {
+            const country = scholarship.querySelector('.country').value.toLowerCase();
+            if (country.includes(filter)) {
+                scholarship.style.display = 'block';
+            } else {
+                scholarship.style.display = 'none';
+            }
+        });
+
+        // Remove empty scholarships
+        if (filter === '') {
+            scholarships.forEach(scholarship => {
+                scholarship.style.display = 'none';
+            });
         }
     });
 });
 
-const scholarshipBoxes = document.querySelectorAll('.scholarship');
-const clickname = document.querySelector('.clickname');
-const clickcountry = document.querySelector('.clickcountry');
-const clickclass = document.querySelector('.clickclass');
-const clickstarting = document.querySelector('.clickstarting');
-const clickend = document.querySelector('.clickend');
-const clickdesc = document.querySelector('.clickdesc');
-const clicklink = document.querySelector('.clicklink');
-scholarshipBoxes.forEach(box => {
-    box.addEventListener('click', function () {
-        const name = this.querySelector('.name').textContent.replace('Name : ', '');
-        const country = this.querySelector('.country').value;
-        const classValue = this.querySelector('.class').value;
-        const startingDate = this.querySelector('.Startingdate').textContent.replace('Starting_date : ', '');
-        const endDate = this.querySelector('.Enddate').textContent.replace('End_date : ', '');
-        const description = this.querySelector('.description').textContent.replace('Description : ', '');
-        const linkUrl = this.querySelector('.link a').href;
+function addScholarship(name, country, classValue, startDate, endDate, description, linkUrl) {
+    // Clone the template
+    const template = document.querySelector('#scholarship-template');
+    const newScholarship = template.cloneNode(true);
+    
+    // Remove the id from the cloned node and make it visible
+    newScholarship.id = '';
+    newScholarship.style.display = 'block';
 
-        clickname.textContent = `Name: ${name}`;
-        clickcountry.textContent = `Country: ${country}`;
-        clickclass.textContent = `Class: ${classValue}`;
-        clickstarting.textContent = `Start Date: ${startingDate}`;
-        clickend.textContent = `End Date: ${endDate}`;
-        clickdesc.textContent = description;
-        clicklink.textContent = 'Click here for more info';
-        clicklink.href = linkUrl;
-    });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const menuIcon = document.getElementById('menu');
-    const navUl = document.querySelector('header nav ul');
+    // Populate the cloned node with the provided data
+    newScholarship.querySelector('.name').textContent = `Name: ${name}`;
+    newScholarship.querySelector('.country').value = country;
+    newScholarship.querySelector('.class').value = classValue;
+    newScholarship.querySelector('.Startingdate').textContent = `Starting_date: ${startDate}`;
+    newScholarship.querySelector('.Enddate').textContent = `End_date: ${endDate}`;
+    newScholarship.querySelector('.description').textContent = `Description: ${description}`;
+    newScholarship.querySelector('.link a').href = linkUrl;
 
-    menuIcon.addEventListener('click', () => {
-        navUl.classList.toggle('show');
+    // Append the new scholarship to the container
+    document.querySelector('.scholarshipcont2').appendChild(newScholarship);
+
+    // Attach click event listener for expanding and collapsing
+    newScholarship.addEventListener('click', function() {
+        if (newScholarship.classList.remove('expanded')) {
+            
+            newScholarship.querySelector('.close-btn').style.display = 'none';
+        } else {
+            newScholarship.classList.add('expanded');
+            newScholarship.querySelector('.close-btn').style.display = 'flex';
+        }
     });
-});
+
+    // Attach click event listener for close button
+    newScholarship.querySelector('.close-btn').addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent triggering the parent click event
+        newScholarship.classList.remove('expanded');
+        newScholarship.querySelector('.close-btn').style.display = 'none';
+    });
+}

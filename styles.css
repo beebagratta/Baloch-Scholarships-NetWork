@@ -54,7 +54,14 @@ main {
     animation: fadeIn 1.5s ease-in-out;
 }
 
+.scholarshipcont2 {
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+}
+
 .scholarship {
+    overflow: hidden;
     width: 100%;
     max-width: 600px;
     margin-bottom: 20px;
@@ -67,29 +74,17 @@ main {
     opacity: 0;
     animation: fadeUp 0.5s ease forwards;
     animation-delay: calc(0.1s * var(--i));
-    display: none;
-    height: 140px;
-    overflow: hidden;
+    position: relative;
+    cursor: pointer;
 }
 
-.scholarship .name,
-.scholarship .country_cont,
-.scholarship .class_cont,
-.scholarship .Startingdate,
-.scholarship .Enddate,
-.scholarship .description,
-.scholarship .link {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+.scholarship.expanded {
+    height: auto; /* Adjust height for expanded state */
+    transform: none;
 }
-.scholarshipcont2{
-    height: 300px;
-    overflow: scroll;
-    display: none;
-    
-}
+
 .scholarship input {
-    width:fit-content;
+    width: fit-content;
     border: none;
     background: transparent;
     font-size: 1.2rem;
@@ -100,31 +95,26 @@ main {
     outline: none;
 }
 
-.scholarship_details {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    margin-top: 20px;
-    animation: fadeIn 2s ease-in-out;
+.scholarship .additional-info {
+    display: none;
 }
 
-.scholarship_details h2,
-.scholarship_details a,
-.scholarship_details p {
-    font-size: 1.3rem;
-    line-height: 30px;
+.scholarship.expanded .additional-info {
+    display: block;
 }
 
-.scholarship_details a {
-    color: #82d4cc;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.scholarship_details a:hover {
-    color: #66a9a0;
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
 @keyframes fadeIn {
@@ -144,5 +134,56 @@ main {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .searchbox {
+        width: 90%;
+    }
+
+    .searchbox input {
+        height: 6vh;
+        font-size: 1.1rem;
+    }
+
+    .scholarshipcont2 {
+        width: 90%;
+    }
+
+    .scholarship {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .scholarship input {
+        font-size: 1rem;
+    }
+
+    .close-btn {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .searchbox input {
+        height: 5vh;
+        font-size: 1rem;
+    }
+
+    .scholarship {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .scholarship input {
+        font-size: 0.9rem;
+    }
+
+    .close-btn {
+        font-size: 0.8rem;
+        padding: 3px 6px;
     }
 }

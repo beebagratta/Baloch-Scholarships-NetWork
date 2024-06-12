@@ -26,51 +26,26 @@
         </div>
         <div class="scholarship_cont">
             <div class="scholarshipcont2">
-                <div class="scholarship">
-                    <div class="name">Name : New scholarship</div>
+                <!-- Scholarship template -->
+                <div id="scholarship-template" class="scholarship" style="display: none;">
+                    <div class="name">Name: </div>
                     <div class="country_cont">
-                        <label for="country">Country : </label>
-                        <input type="text" value="Italy" readonly class="country">
+                        <label for="country">Country: </label>
+                        <input type="text" readonly class="country">
                     </div>
                     <div class="class_cont">
-                        <label for="class">Class : </label>
-                        <input type="text" value="10" readonly class="class">
+                        <label for="class">Class: </label>
+                        <input type="text" readonly class="class">
                     </div>
-                    <div class="Startingdate">Starting_date : 2024-01-01</div>
-                    <div class="Enddate">End_date : 2024-12-31</div>
-                    <div class="description">Description : This is a sample description.</div>
-                    <div class="link"><a href="#" class="link-url">Click Here For More Info.</a></div>
+                    <div class="additional-info">
+                        <div class="Startingdate">Starting_date: </div>
+                        <div class="Enddate">End_date: </div>
+                        <div class="description">Description: </div>
+                        <div class="link"><a href="#" class="link-url">Click Here For More Info.</a></div>
+                    </div>
+                    <button class="close-btn">Close</button>
                 </div>
-                <div class="scholarship">
-                    <div class="name">Name : Old Scholorship</div>
-                    <div class="country_cont">
-                        <label for="country">Country : </label>
-                        <input type="text" value="Italy" readonly class="country">
-                    </div>
-                    <div class="class_cont">
-                        <label for="class">Class : </label>
-                        <input type="text" value="15" readonly class="class">
-                    </div>
-                    <div class="Startingdate">Starting_date : 2024-01-01</div>
-                    <div class="Enddate">End_date : 2024-12-31</div>
-                    <div class="description">Description : This is a sample description.</div>
-                    <div class="link"><a href="#" class="link-url">Click Here For More Info.</a></div>
-                </div>
-                
-                <!-- Copy scholarship and paste it below and then the scholarship will open then chanage all the details according to the new scholarship then in the left of the div of new scholarship you will see a arrow then press it.-->
-
-
-
-            </div>
-          
-            <div class="scholarship_details">
-                <h2 class="clickname">Name</h2>
-                <h2 class="clickcountry">Country</h2>
-                <h2 class="clickclass">Class</h2>
-                <h2 class="clickstarting">Start Date</h2>
-                <h2 class="clickend">End Date</h2>
-                <p class="clickdesc">Description</p>
-                <a href="#" class="clicklink">Click here</a>
+                <!-- End of scholarship template -->
             </div>
         </div>
     </main>
