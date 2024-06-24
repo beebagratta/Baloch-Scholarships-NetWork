@@ -10,16 +10,20 @@
     <title>Baloch Scholarship Network</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <span class="material-symbols-outlined" id="menu">menu</span>
-            <ul class="hidden">
-                <li><a href="#">Scholarship</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="headercont">
+        <span class="material-symbols-outlined" id="menu">menu</span>
+        <span class="material-symbols-outlined" id="close" style="display: none;">close</span>
+        <header id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">Scholarship</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    
     <main>
         <div class="searchbox">
             <input type="text" id="searchbar" placeholder="Search Country">
@@ -28,7 +32,7 @@
             <div class="scholarshipcont2">
                 <!-- Scholarship template -->
                 <div id="scholarship-template" class="scholarship" style="display: none;">
-                    <div class="name">Name: </div>
+                    <div class="name"></div>
                     <div class="country_cont">
                         <label for="country">Country: </label>
                         <input type="text" readonly class="country">
@@ -41,7 +45,7 @@
                         <div class="Startingdate">Starting_date: </div>
                         <div class="Enddate">End_date: </div>
                         <div class="description">Description: </div>
-                        <div class="link"><a href="#" class="link-url">Click Here For More Info.</a></div>
+                        <div class="links"></div> <!-- Container for multiple links -->
                     </div>
                     <button class="close-btn">Close</button>
                 </div>

@@ -1,14 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // adding new scholarships
-    addScholarship('New Scholarship', 'Italy', '10', '2024-01-01', '2024-06-13', 'This is a sample description. This description is intentionally long to demonstrate the expanding functionality of the scholarship div. When the text is long, the div should expand accordingly to accommodate all the content.', '#');
-    addScholarship('Old Scholarship', 'Italy', '15', '2024-01-01', '2024-6-12', 'This is another sample description. This description is also intentionally long to demonstrate the expanding functionality of the scholarship div. When the text is long, the div should expand accordingly to accommodate all the content.', '#');
-
+    // Adding new scholarships with multiple links
+    addScholarship(
+        'Regional Scholarships Italy', 
+        'Italy', 
+        'Becholar, Master and PhD', 
+        'May/Jun Each Year', 
+        'July/Agust Each year', 
+        "Italy offers regional scholarships through the Italian government. These scholarships apply only to the universities that fall within the specific region. Studying in Italy has become easy as these scholarships support a student's tuition fees, accommodation, and living expenses.  `Some of the regional scholarships are purely need-based, meaning that people having low merit and scores on their degrees can also apply based on their inability to support their degree financially. To prove that you truly need financial assistance, the scholarship application requires you to present Bank certificate Property certificate Family income certificate`",
+        ['https://www.laziodisco.it/', 'https://second-link.com/', 'https://third-link.com/' , 'https://www.google.com']
+    );
+    addScholarship('Name', 'Country','Class', 'Start_date','End_date', "Description",['link']);
+    
     // Event listener for the menu button
     const menuButton = document.getElementById('menu');
-    const navMenu = document.querySelector('nav ul');
+    const closeButton = document.getElementById('close');
+    const sidebar = document.getElementById('sidebar');
 
     menuButton.addEventListener('click', function() {
-        navMenu.classList.toggle('show');
+        sidebar.classList.add('nav-open');
+        menuButton.style.display = 'none';
+        closeButton.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', function() {
+        sidebar.classList.remove('nav-open');
+        menuButton.style.display = 'block';
+        closeButton.style.display = 'none';
     });
 
     // Search functionality
@@ -49,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     removeExpiredScholarships();
 });
 
-function addScholarship(name, country, classValue, startDate, endDate, description, linkUrl) {
+function addScholarship(name, country, classValue, startDate, endDate, description, linkUrls) {
     // Clone the template
     const template = document.querySelector('#scholarship-template');
     const newScholarship = template.cloneNode(true);
@@ -59,13 +76,24 @@ function addScholarship(name, country, classValue, startDate, endDate, descripti
     newScholarship.style.display = 'block';
 
     // Populate the cloned node with the provided data
-    newScholarship.querySelector('.name').textContent = `Name: ${name}`;
+    newScholarship.querySelector('.name').textContent = `${name}`;
     newScholarship.querySelector('.country').value = country;
     newScholarship.querySelector('.class').value = classValue;
     newScholarship.querySelector('.Startingdate').textContent = `Starting_date: ${startDate}`;
     newScholarship.querySelector('.Enddate').textContent = `End_date: ${endDate}`;
     newScholarship.querySelector('.description').textContent = `Description: ${description}`;
-    newScholarship.querySelector('.link a').href = linkUrl;
+
+    // Clear existing links
+    const linksContainer = newScholarship.querySelector('.links');
+    linksContainer.innerHTML = '';
+
+    // Add each link
+    linkUrls.forEach(linkUrl => {
+        const linkElement = document.createElement('div');
+        linkElement.classList.add('link');
+        linkElement.innerHTML = `<a href="${linkUrl}" target="_blank" class="link-url">${linkUrl}</a>`;
+        linksContainer.appendChild(linkElement);
+    });
 
     // Append the new scholarship to the container only if it has valid data
     if (name && country && classValue && startDate && endDate && description) {
@@ -73,13 +101,8 @@ function addScholarship(name, country, classValue, startDate, endDate, descripti
 
         // Attach click event listener for expanding and collapsing
         newScholarship.addEventListener('click', function() {
-            if (newScholarship.classList.contains('expanded')) {
-                newScholarship.classList.remove('expanded');
-                newScholarship.querySelector('.close-btn').style.display = 'none';
-            } else {
-                newScholarship.classList.add('expanded');
-                newScholarship.querySelector('.close-btn').style.display = 'flex';
-            }
+            newScholarship.classList.add('expanded');
+            newScholarship.querySelector('.close-btn').style.display = 'flex';
         });
 
         // Attach click event listener for close button
@@ -89,16 +112,4 @@ function addScholarship(name, country, classValue, startDate, endDate, descripti
             newScholarship.querySelector('.close-btn').style.display = 'none';
         });
     }
-}
-
-function removeExpiredScholarships() {
-    const currentDate = new Date().toISOString().split('T')[0];
-    const scholarships = document.querySelectorAll('.scholarship');
-    
-    scholarships.forEach(scholarship => {
-        const endDate = scholarship.querySelector('.Enddate').textContent.replace('End_date: ', '').trim();
-        if (endDate === currentDate) {
-            scholarship.remove();
-        }
-    });
 }

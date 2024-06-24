@@ -76,11 +76,13 @@ main {
     animation-delay: calc(0.1s * var(--i));
     position: relative;
     cursor: pointer;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    max-height: 200px; /* Default height */
 }
 
 .scholarship.expanded {
-    height: auto; /* Adjust height for expanded state */
-    transform: none;
+    max-height: 1000px; /* Enough height to show all content */
+    padding: 30px;
 }
 
 .scholarship input {
@@ -115,6 +117,10 @@ main {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 1rem;
+}
+.name{
+    font-weight: bold;
+    font-size: 1.6rem;
 }
 
 @keyframes fadeIn {
