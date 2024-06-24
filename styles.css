@@ -87,7 +87,7 @@ main {
 
 
 .scholarship input {
-    width: fit-content;
+    width:fit-content;
     border: none;
     background: transparent;
     font-size: 1.2rem;
@@ -126,9 +126,7 @@ main {
 .scholarship label{
     width: inherit;
 }
-.scholarship input{
-    width: 50px;
-}
+
 
 @keyframes fadeIn {
     from {
