@@ -1,15 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Adding new scholarships with multiple links
-    addScholarship(
-        'Regional Scholarships Italy', 
-        'Italy', 
-        'Becholar, Master and PhD', 
-        'May/Jun Each Year', 
-        'July/Agust Each year', 
-        "Italy offers regional scholarships through the Italian government. These scholarships apply only to the universities that fall within the specific region. Studying in Italy has become easy as these scholarships support a student's tuition fees, accommodation, and living expenses.  `Some of the regional scholarships are purely need-based, meaning that people having low merit and scores on their degrees can also apply based on their inability to support their degree financially. To prove that you truly need financial assistance, the scholarship application requires you to present Bank certificate Property certificate Family income certificate`",
-        ['https://www.laziodisco.it/', 'https://second-link.com/', 'https://third-link.com/' , 'https://www.google.com']
+    // Adding new scholarships
+    // addScholarship('Name', 'Country','Class', 'Start_date','End_date', "Description",['link']);
+
+    addScholarship('Regional Scholarships Italy', 'Italy','Becholar, Master and PhD', 'May/Jun Each Year', 'July/Agust Each year',"Italy offers regional scholarships through the Italian government. These scholarships apply only to the universities that fall within the specific region. Studying in Italy has become easy as these scholarships support a student's tuition fees, accommodation, and living expenses.  `Some of the regional scholarships are purely need-based, meaning that people having low merit and scores on their degrees can also apply based on their inability to support their degree financially. To prove that you truly need financial assistance, the scholarship application requires you to present Bank certificate Property certificate Family income certificate`",['https://www.laziodisco.it/', 'https://second-link.com/', 'https://third-link.com/' , 'https://www.google.com']
     );
-    addScholarship('Name', 'Country','Class', 'Start_date','End_date', "Description",['link']);
+    
     
     // Event listener for the menu button
     const menuButton = document.getElementById('menu');

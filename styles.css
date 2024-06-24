@@ -122,6 +122,12 @@ main {
     font-weight: bold;
     font-size: 1.6rem;
 }
+.scholarship label{
+    width: inherit;
+}
+.scholarship input{
+    width: 50px;
+}
 
 @keyframes fadeIn {
     from {
