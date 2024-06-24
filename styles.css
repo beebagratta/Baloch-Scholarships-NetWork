@@ -81,9 +81,10 @@ main {
 }
 
 .scholarship.expanded {
-    max-height: 1000px; /* Enough height to show all content */
+    max-height: inherit; /* Enough height to show all content */
     padding: 30px;
 }
+
 
 .scholarship input {
     width: fit-content;
@@ -151,12 +152,15 @@ main {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .scholarship a{
+        font-size: 13px;
+    }
     .searchbox {
         width: 90%;
     }
 
     .searchbox input {
-        height: 6vh;
+        height: 12vh;
         font-size: 1.1rem;
     }
 
