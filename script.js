@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Remove scholarships with end dates equal to the current date
-    removeExpiredScholarships();
+   
 });
 
 function addScholarship(name, country, classValue, startDate, endDate, description, linkUrls) {
@@ -72,8 +72,9 @@ function addScholarship(name, country, classValue, startDate, endDate, descripti
 
     // Populate the cloned node with the provided data
     newScholarship.querySelector('.name').textContent = `${name}`;
-    newScholarship.querySelector('.country').value = country;
-    newScholarship.querySelector('.class').value = classValue;
+    newScholarship.querySelector('.country').textContent = `Country: ${country}`;
+    
+    newScholarship.querySelector('.class').textContent = `Class: ${classValue}`;
     newScholarship.querySelector('.Startingdate').textContent = `Starting_date: ${startDate}`;
     newScholarship.querySelector('.Enddate').textContent = `End_date: ${endDate}`;
     newScholarship.querySelector('.description').textContent = `Description: ${description}`;
