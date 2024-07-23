@@ -1,0 +1,147 @@
+header {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, rgba(36, 198, 220, 1) 0%, rgba(81, 74, 157, 1) 100%);
+    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#menu, #close {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 0.4px solid rgba(0, 0, 0, 0.227);
+    border-radius: 50%;
+    background: white;
+    color: black;
+    transition: all 600ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#close {
+    display: none;
+}
+
+#menu:hover, #close:hover {
+    background: black;
+    color: white;
+}
+
+header nav {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    flex-direction: row;
+}
+
+header nav ul {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+    gap: 20px;
+}
+
+header nav ul li {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 560;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+@media (max-width: 800px) {
+    header nav {
+        align-items: start;
+        justify-content: start;
+        height: 80vh;
+        display: none;
+        flex-direction: column;
+        background: rgba(36, 198, 220, 0.9);
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu, #close {
+        display: flex;
+    }
+
+    #close {
+        display: none;
+    }
+}
