@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     scholarships.forEach((scholarship, index) => {
         scholarship.style.setProperty('--i', index + 1);
         scholarship.addEventListener('click', () => {
-            scholarship.classList.toggle('expanded');
+            scholarship.classList.add('expanded');
         });
     });
     

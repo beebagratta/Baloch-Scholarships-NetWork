@@ -146,6 +146,10 @@ main {
 .scholarship input:focus {
     outline: none;
 }
+.expanded {
+    max-height: 1000px; /* Enough height to show all content */
+    padding: 30px;
+}
 
 .scholarship .additional-info {
     display: none;
