@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // NavBar for small device
     document.getElementById('menu').addEventListener('click', function () {
-        document.querySelector('header nav').style.display = 'flex';
+        document.querySelector('.navbar').style.display = 'flex';
         document.getElementById('menu').style.display = 'none';
         document.getElementById('close').style.display = 'flex';
-        document.querySelector('header nav').classList.add('slideIn');
+        document.querySelector('.navbar').classList.add('slideIn');
     });
     
     document.getElementById('close').addEventListener('click', function () {
-        document.querySelector('header nav').style.display = 'none';
+        document.querySelector('.navbar').style.display = 'none';
         document.getElementById('menu').style.display = 'flex';
         document.getElementById('close').style.display = 'none';
     });
