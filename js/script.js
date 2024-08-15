@@ -1,15 +1,12 @@
-
-import { myscholorship } from "./scholorshippdf.js"
+import { myScholarships } from "./Scholarships.js";
 
 document.addEventListener('DOMContentLoaded', function () {
+
+
     // Adding new scholarships
-    // addScholarship('Name', 'Country', "class", 'startdate', 'enddate', "Description",['links']);
-    let scholarshipdeatils = myscholorship.map((schol) => {
-        schol = addScholarship(schol.name, schol.Country, schol.class, schol.desc, schol.enddate, schol.desc, schol.links);
+    let scholarshipdeatils = myScholarships.map((scholorShips) => {
+        scholorShips = addScholarship(scholorShips.name, scholorShips.Country, scholorShips.class, scholorShips.desc, scholorShips.enddate, scholorShips.desc, scholorShips.links);
     });
-
-
-
 
     // NavBar for small device
     document.getElementById('menu').addEventListener('click', function () {
@@ -18,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('close').style.display = 'flex';
         document.querySelector('.navbar').classList.add('slideIn');
     });
-    
+
     document.getElementById('close').addEventListener('click', function () {
         document.querySelector('.navbar').style.display = 'none';
         document.getElementById('menu').style.display = 'flex';
         document.getElementById('close').style.display = 'none';
     });
-    
+
     const scholarships = document.querySelectorAll('.scholarship');
     scholarships.forEach((scholarship, index) => {
         scholarship.style.setProperty('--i', index + 1);
@@ -32,9 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
             scholarship.classList.add('expanded');
         });
     });
-    
 
-    // Showing Menu accroding to Scrolling
+    // Showing Menu according to Scrolling
     let lastScrollTop = 0;
     const header = document.querySelector('header');
 
@@ -87,6 +83,16 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
+
+    // Smooth scroll to sections
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 });
 
 function addScholarship(name, country, classValue, startDate, endDate, description, linkUrls) {
@@ -100,9 +106,9 @@ function addScholarship(name, country, classValue, startDate, endDate, descripti
 
     // Populate the cloned node with the provided data
     newScholarship.querySelector('.name').textContent = `${name}`;
-    newScholarship.querySelector('.country').textContent = `Country: ${country}`;
-    newScholarship.querySelector('.class').textContent = `Class: ${classValue}`;
-    newScholarship.querySelector('.Startingdate').textContent = `Starting_date: ${startDate}`;
+    newScholarship.querySelector('.country').textContent =` Country: ${country}`;
+    newScholarship.querySelector('.class').textContent =`Class: ${classValue}`;
+    newScholarship.querySelector('.Startingdate').textContent = `Starting_date:${startDate}`;
     newScholarship.querySelector('.Enddate').textContent = `End_date: ${endDate}`;
     newScholarship.querySelector('.description').textContent = `Description: ${description}`;
 
@@ -134,6 +140,7 @@ function addScholarship(name, country, classValue, startDate, endDate, descripti
             newScholarship.classList.remove('expanded');
             newScholarship.querySelector('.close-btn').style.display = 'none';
         });
-    };
+       
+    }
+  
 }
-

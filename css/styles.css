@@ -12,7 +12,7 @@ body {
 }
 
 main {
-    width: 100%;
+    width: 70%;
     padding: 20px;
     background: white;
     border-radius: 10px;
@@ -118,7 +118,7 @@ main {
     padding: 20px;
     background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     transform: translateY(20px);
     opacity: 0;

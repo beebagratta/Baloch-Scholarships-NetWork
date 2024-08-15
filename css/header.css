@@ -38,6 +38,11 @@ header {
     justify-content: center;
     animation: fadeIn 1s ease-in-out;
 }
+.menuline{
+    height: 50px;
+    width: 80%;
+    color: black;
+}
 
 @keyframes fadeIn {
     0% {
@@ -53,8 +58,9 @@ header {
 }
 
 #menu:hover, #close:hover {
-    background: black;
-    color: white;
+    border:1px solid black;
+    
+    
 }
 
 header nav {
