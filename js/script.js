@@ -26,12 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
         
         scholarships.forEach(scholarship => {
             const country = scholarship.querySelector('.country').textContent.toLowerCase();
+            const templete=document.querySelectorAll(".templete")
             if (country.includes(filter)) {
                 scholarship.style.display = 'block';
             } else {
                 scholarship.style.display = 'none';
             }
+            templete.forEach(temp=>{
+                temp.style.display="none";
+            })
         });
+        
     });
     
 
