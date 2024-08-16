@@ -1,11 +1,9 @@
 import { myScholarships } from "./Scholarships.js";
 
 document.addEventListener('DOMContentLoaded', function () {
-
-
-    // Adding new scholarships
-    let scholarshipdeatils = myScholarships.map((scholorShips) => {
-        scholorShips = addScholarship(scholorShips.name, scholorShips.Country, scholorShips.class, scholorShips.desc, scholorShips.enddate, scholorShips.desc, scholorShips.links);
+    const scholarshipsContainer = document.querySelector('.scholarship_cont');
+    document.getElementById('menu').addEventListener('click', function () {
+        document.querySelector('header').classList.add('nav-open');
     });
 
     // NavBar for small device
@@ -21,126 +19,83 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('menu').style.display = 'flex';
         document.getElementById('close').style.display = 'none';
     });
-
-    const scholarships = document.querySelectorAll('.scholarship');
-    scholarships.forEach((scholarship, index) => {
-        scholarship.style.setProperty('--i', index + 1);
-        scholarship.addEventListener('click', () => {
-            scholarship.classList.add('expanded');
-        });
-    });
-
-    // Showing Menu according to Scrolling
-    let lastScrollTop = 0;
-    const header = document.querySelector('header');
-
-    window.addEventListener('scroll', function () {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-            // Scrolling down
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            header.style.transform = 'translateY(0)';
-        }
-        lastScrollTop = scrollTop;
-    });
-
-    // Search functionality
     const searchbar = document.getElementById('searchbar');
-    searchbar.addEventListener('input', function () {
+    searchbar.addEventListener('input', function() {
         const filter = searchbar.value.toLowerCase();
-        const scholarships = document.querySelectorAll('.scholarship');
-        const scholarship_temp = document.querySelector("#scholarship-template");
-
+        const scholarships = document.querySelectorAll('.scholarship-card');
+        
         scholarships.forEach(scholarship => {
             const country = scholarship.querySelector('.country').textContent.toLowerCase();
-            if (country.indexOf(filter) !== -1) {
-                scholarship.style.display = '';
-                scholarship_temp.style.display = "none";
+            if (country.includes(filter)) {
+                scholarship.style.display = 'block';
             } else {
                 scholarship.style.display = 'none';
-                scholarship_temp.style.display = "none";
             }
         });
-
-        // Remove empty scholarships
-        if (filter === '') {
-            scholarships.forEach(scholarship => {
-                const name = scholarship.querySelector('.name').textContent.trim();
-                const country = scholarship.querySelector('.country').textContent.trim();
-                const classValue = scholarship.querySelector('.class').textContent.trim();
-                const startDate = scholarship.querySelector('.Startingdate').textContent.trim();
-                const endDate = scholarship.querySelector('.Enddate').textContent.trim();
-                const description = scholarship.querySelector('.description').textContent.trim();
-
-                if (name !== '' && country !== '' && classValue !== '' && startDate !== '' && endDate !== '' && description !== '') {
-                    scholarship.style.display = 'block';
-                } else {
-                    scholarship.style.display = 'none';
-                }
-            });
-        }
     });
+    
 
-    // Smooth scroll to sections
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+    // Function to create the scholarship card
+    function addScholarship(scholarship) {
+        const card = document.createElement('div');
+        card.classList.add('scholarship-card');
+
+        // Add name, country, and class to the card
+        card.innerHTML = `
+            <div class="name">${scholarship.name}</div>
+            <div class="country">Country: ${scholarship.Country}</div>
+            <div class="class">Class: ${scholarship.class}</div>
+        `;
+
+        // Append card to the container
+        scholarshipsContainer.appendChild(card);
+
+        // Add event listener to show popup
+        card.addEventListener('click', () => {
+            showPopup(scholarship);
         });
-    });
-});
-
-function addScholarship(name, country, classValue, startDate, endDate, description, linkUrls) {
-    // Clone the template
-    const template = document.querySelector('#scholarship-template');
-    const newScholarship = template.cloneNode(true);
-
-    // Remove the id from the cloned node and make it visible
-    newScholarship.id = '';
-    newScholarship.style.display = 'block';
-
-    // Populate the cloned node with the provided data
-    newScholarship.querySelector('.name').textContent = `${name}`;
-    newScholarship.querySelector('.country').textContent =` Country: ${country}`;
-    newScholarship.querySelector('.class').textContent =`Class: ${classValue}`;
-    newScholarship.querySelector('.Startingdate').textContent = `Starting_date:${startDate}`;
-    newScholarship.querySelector('.Enddate').textContent = `End_date: ${endDate}`;
-    newScholarship.querySelector('.description').textContent = `Description: ${description}`;
-
-    // Clear existing links
-    const linksContainer = newScholarship.querySelector('.links');
-    linksContainer.innerHTML = '';
-
-    // Add each link
-    linkUrls.forEach(linkUrl => {
-        const linkElement = document.createElement('div');
-        linkElement.classList.add('link');
-        linkElement.innerHTML = `<a href="${linkUrl}" target="_blank" class="link-url">${linkUrl}</a>`;
-        linksContainer.appendChild(linkElement);
-    });
-
-    // Append the new scholarship to the container only if it has valid data
-    if (name && country && classValue && startDate && endDate && description) {
-        document.querySelector('.scholarshipcont2').appendChild(newScholarship);
-
-        // Attach click event listener for expanding and collapsing
-        newScholarship.addEventListener('click', function () {
-            newScholarship.classList.add('expanded');
-            newScholarship.querySelector('.close-btn').style.display = 'flex';
-        });
-
-        // Attach click event listener for close button
-        newScholarship.querySelector('.close-btn').addEventListener('click', function (event) {
-            event.stopPropagation(); // Prevent triggering the parent click event
-            newScholarship.classList.remove('expanded');
-            newScholarship.querySelector('.close-btn').style.display = 'none';
-        });
-       
     }
-  
-}
+
+
+
+    // Function to show popup
+    function showPopup(scholarship) {
+        const popup = document.createElement('div');
+        popup.style.display = "none";
+        popup.classList.add('popup');
+        const overlay = document.querySelector(".overlay");
+        const mainContent = document.querySelector("main");
+        scholarshipsContainer.addEventListener("click", () => {
+            popup.style.display = "flex"
+            overlay.style.display = "flex";
+        })
+
+        popup.innerHTML = `
+            <div class="popup-content">
+                <button class="close-popup">&times;</button>
+                <h2>${scholarship.name}</h2>
+                <p><strong>Country:</strong> ${scholarship.Country}</p>
+                <p><strong>Class:</strong> ${scholarship.class}</p>
+                <p><strong>Start Date:</strong> ${scholarship.startdate}</p>
+                <p><strong>End Date:</strong> ${scholarship.enddate}</p>
+                <p><strong>Description:</strong> ${scholarship.desc}</p>
+                <div class="links">
+                    <strong>Links:</strong>
+                    ${scholarship.links.map(link => `<p><a href="${link}" target="_blank">${link}</a></p>`).join('')}
+                </div>
+            </div>
+        `;
+
+        // Add event listener to close popup
+        popup.querySelector('.close-popup').addEventListener('click', () => {
+            popup.remove();
+            overlay.style.display = "none";
+        });
+
+        // Append popup to the body
+        document.body.appendChild(popup);
+    }
+
+    // Load all scholarships
+    myScholarships.forEach(addScholarship);
+});

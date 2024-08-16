@@ -1,289 +1,220 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
     line-height: 1.6;
-    padding-top: 70px; /* Ensure content is below fixed header */
-    background: linear-gradient(135deg, rgba(242, 112, 156, 0.3) 0%, rgba(255, 148, 114, 0.3) 100%), #f4f4f9;
+    width: 100vw;
+    height: 100vh;
 }
 
 main {
-    width: 70%;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 1200px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-#searchbox {
-    height: 10vh;
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    animation: fadeIn 1s ease-in-out;
-}
-
-#searchbar {
-    height: 8vh;
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-size: 1.3rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    animation: bounceIn 1s ease-in-out;
-}
-
-@keyframes bounceIn {
-    0%, 20%, 40%, 60%, 80%, 100% {
-        -webkit-transition-timing-function: cubic-bezier(0.5, 0.1, 0.25, 1.25);
-        transition-timing-function: cubic-bezier(0.5, 0.1, 0.25, 1.25);
-    }
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(-2000px);
-        -ms-transform: translateY(-2000px);
-        transform: translateY(-2000px);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: translateY(30px);
-        -ms-transform: translateY(30px);
-        transform: translateY(30px);
-    }
-    80% {
-        -webkit-transform: translateY(-10px);
-        -ms-transform: translateY(-10px);
-        transform: translateY(-10px);
-    }
-    100% {
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-        transform: translateY(0);
-    }
-}
-
-#searchbar:focus {
-    outline: none;
-    border-color: #82d4cc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.scholarship_cont {
-    height: auto;
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.scholarshipcont2 {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.scholarship {
-    overflow: hidden;
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    transform: translateY(20px);
-    opacity: 0;
-    animation: fadeUp 0.5s ease forwards;
-    animation-delay: calc(0.1s * var(--i));
     position: relative;
+    padding-top: 70px; /* Avoid overlap with header */
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background: #00000060;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Search Box Styles */
+#searchbox {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#searchbox input {
+    width: 80%; /* Adjust the width as needed */
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Scholarship Cards */
+.scholarship_cont {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:0 50px;
+}
+
+.scholarship-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 48%;
+    margin: 10px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    max-height: 200px; /* Default height */
 }
 
-.scholarship.expanded {
-    max-height: inherit; /* Enough height to show all content */
-    padding: 30px;
+.scholarship-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.scholarship input {
-    width: fit-content;
-    border: none;
-    background: transparent;
-    font-size: 1.2rem;
-    padding: 5px;
+.scholarship-card .name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #004080;
+    margin-bottom: 10px;
 }
 
-.scholarship input:focus {
-    outline: none;
-}
-.expanded {
-    max-height: 1000px; /* Enough height to show all content */
-    padding: 30px;
+.scholarship-card .country,
+.scholarship-card .class {
+    font-size: 16px;
+    font-weight: 500;
 }
 
-.scholarship .additional-info {
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
     display: none;
 }
 
-.scholarship.expanded .additional-info {
-    display: block;
+.popup-content {
+    position: relative;
 }
 
-.close-btn {
-    display: none;
+.close-popup {
     position: absolute;
     top: 10px;
     right: 10px;
-    cursor: pointer;
-    background-color: #ff6347;
-    color: white;
+    background: none;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.name {
-    font-weight: bold;
-    font-size: 1.6rem;
-}
-
-.scholarship label {
-    width: inherit;
-}
-
-/* Keyframes for animations */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translate(-50%, -60%);
     }
     to {
         opacity: 1;
-    }
-}
-
-@keyframes bounceIn {
-    0%, 20%, 40%, 60%, 80%, 100% {
-        -webkit-transition-timing-function: cubic-bezier(0.5, 0.1, 0.25, 1.25);
-        transition-timing-function: cubic-bezier(0.5, 0.1, 0.25, 1.25);
-    }
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(-2000px);
-        -ms-transform: translateY(-2000px);
-        transform: translateY(-2000px);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: translateY(30px);
-        -ms-transform: translateY(30px);
-        transform: translateY(30px);
-    }
-    80% {
-        -webkit-transform: translateY(-10px);
-        -ms-transform: translateY(-10px);
-        transform: translateY(-10px);
-    }
-    100% {
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-        transform: translateY(0);
+        transform: translate(-50%, -50%);
     }
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .searchbox {
-        width: 90%;
+
+/* For tablets (768px and up) */
+@media (max-width: 1024px) {
+    .scholarship-card {
+        width: 100%;
     }
 
-    .searchbox input {
-        height: 12vh;
-        font-size: 1.1rem;
-    }
-
-    .scholarshipcont2 {
-        width: 90%;
-    }
-
-    .scholarship {
+    .popup {
+        width: 95%;
         padding: 15px;
-        margin-bottom: 15px;
     }
 
-    .scholarship input {
-        font-size: 1rem;
+    .scholarship-card .name {
+        font-size: 20px;
     }
 
-    .close-btn {
-        font-size: 0.9rem;
-        padding: 4px 8px;
+    .scholarship-card .country,
+    .scholarship-card .class {
+        font-size: 15px;
     }
 }
 
-@media (max-width: 480px) {
-    .searchbox input {
-        height: 12vh;
-        font-size: 1rem;
-    }
-
-    .scholarship {
+/* For mobile phones (up to 767px) */
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
         padding: 10px;
-        margin-bottom: 10px;
     }
 
-    .scholarship input {
-        font-size: 0.9rem;
+    .scholarship-card {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
     }
 
-    .close-btn {
-        font-size: 0.8rem;
-        padding: 5px 10px;
+    .scholarship-card .name {
+        font-size: 18px;
     }
 
-    .name {
-        margin-top: 20px;
+    .scholarship-card .country,
+    .scholarship-card .class {
+        font-size: 14px;
+    }
+
+    .popup {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .popup-content h2 {
+        font-size: 18px;
+    }
+
+    .popup-content p {
+        font-size: 14px;
+    }
+
+    .close-popup {
+        font-size: 18px;
     }
 }
 
+/* For small phones (up to 480px) */
+@media (max-width: 480px) {
+    .scholarship-card {
+        padding: 10px;
+    }
+
+    .scholarship-card .name {
+        font-size: 16px;
+    }
+
+    .scholarship-card .country,
+    .scholarship-card .class {
+        font-size: 13px;
+    }
+
+    .popup-content p {
+        font-size: 12px;
+    }
+
+    .close-popup {
+        font-size: 16px;
+    }
+}
