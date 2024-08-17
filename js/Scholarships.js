@@ -82,8 +82,8 @@ let myScholarships = [
         "name": "Bergamo University Scholarship",
         "Country": "Italy",
         "class": "Bachelor/Master",
-        "startdate": "Year",
-        "enddate": "Year",
+        "startdate": "Each Year",
+        "enddate": " Each Year",
         "desc": "Bergamo University offers various Bachelor and Master programs. After receiving admission, students can apply for a study visa at the Italian Consulate in Karachi. The process includes applying for a Declaration of Value (DoV) and preparing other necessary documents for the visa. Financial scholarships are available based on family income, covering tuition fees, accommodation, food vouchers, and a bi-annual stipend.",
         "links": [
             "https://www.unibg.it/",
@@ -126,7 +126,66 @@ let myScholarships = [
             "https://studyportal.com/bachelors",
             "https://studyportal.com/masters"
         ]
+    },
+    {
+        "name": "Fulbright Foreign Student Program",
+        "Country": "USA",
+        "class": "Masters/PhD Degrees",
+        "startdate": "Academic Year 2025-2026",
+        "enddate": "Varies",
+        "desc": "The Fulbright Foreign Student Program enables graduate students, young professionals, and artists from abroad to study and conduct research in the United States at U.S. universities or other academic institutions. Approximately 4,000 foreign students from 155 countries receive Fulbright scholarships each year. The scholarship generally covers tuition, airfare, a living stipend, and health insurance, providing funding for the duration of the study. Eligibility and selection procedures vary by country.",
+        "links": [
+            "http://foreign.fulbrightonline.org/about/foreign-fulbright"
+        ]
+    },
+    {
+        "name": "Knight-Hennessy Scholars at Stanford University",
+        "Country": "USA",
+        "class": "Masters/PhD Degree",
+        "startdate": "Autumn 2025",
+        "enddate": "Varies",
+        "desc": "The Knight-Hennessy Scholars program at Stanford University cultivates a diverse, multidisciplinary community of emerging leaders from around the world. It prepares scholars to address complex societal challenges through leadership development, community experiences, and academic enrichment. The program spans all 7 schools at Stanford, offering funding for up to three years for any graduate degree, including tuition, living stipend, and travel costs.",
+        "links": [
+            "https://knight-hennessy.stanford.edu/"
+        ]
+    },
+    {
+        "name": "University of Sydney International Scholarship",
+        "Country": "Australia",
+        "class": "Masters/PhD Degree",
+        "startdate": "2025",
+        "enddate": "Varies",
+        "desc": "The University of Sydney International Scholarship, funded by the University of Sydney, provides a yearly scholarship to high-quality international postgraduate students who wish to study a master’s by research or PhD. The scholarship is valued at $37,207 per annum for 2023 awards and assists with tuition fees and living costs. Eligible students must have an outstanding academic record, research potential, and an unconditional offer of admission or current enrollment in a master’s by research or PhD at the University of Sydney.",
+        "links": [
+            "https://sydney.edu.au/scholarships/e/university-sydney-international-scholarship.html"
+        ]
+    },
+    {
+        "name": "Maastricht University NL-High Potential Scholarships for International Students",
+        "Country": "Netherlands",
+        "class": "Masters Degree",
+        "startdate": "September 2024",
+        "enddate": "Varies",
+        "desc": "The Maastricht University (UM) NL-High Potential Scholarship programme offers 24 full scholarships of €30,000 each academic year for highly talented students from outside the EU/EEA who have been admitted to a Master’s programme at UM. The scholarship covers living expenses, health and liability insurance, visa application costs, tuition fees, and pre-academic training costs. The scholarship is awarded for the duration of the Master’s programme—13 months for a one-year master’s and 25 months for a two-year master’s.",
+        "links": [
+            "https://www.maastrichtuniversity.nl/support/your-studies-begin/coming-maastricht-university-abroad/um-scholarships-students-abroad"
+        ]
+    },
+    {
+        "name": "Lester B. Pearson International Scholarship Program at University of Toronto",
+        "Country": "Canada",
+        "class": "Bachelors Degree",
+        "startdate": "September 2025",
+        "enddate": "Varies",
+        "desc": "The Lester B. Pearson International Scholarship Program at the University of Toronto recognizes international students who demonstrate exceptional academic achievement, creativity, and leadership. The scholarship covers tuition, books, incidental fees, and full residence support for four years. Approximately 37 students will be named Lester B. Pearson Scholars each year.",
+        "links": [
+            "http://future.utoronto.ca/pearson/about#about"
+        ]
     }
+    
+    
+    
+    
 ];
 export{
     myScholarships
