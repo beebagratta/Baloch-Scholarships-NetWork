@@ -181,7 +181,162 @@ let myScholarships = [
         "links": [
             "http://future.utoronto.ca/pearson/about#about"
         ]
+    },
+    {
+        "name": "Swedish Institute Scholarships for Global Professionals",
+        "Country": "Sweden",
+        "class": "Masters Degree",
+        "startdate": "August 2024",
+        "enddate": "28 Feb 2024",
+        "desc": "The Swedish Institute Scholarships for Global Professionals (SISGP) offers scholarships to a large number of master’s programmes at Swedish universities starting in Autumn 2024. The scholarship aims to develop future global leaders who will contribute to the United Nations 2030 Agenda for Sustainable Development and foster positive, sustainable development in their home countries. The scholarship covers full tuition fees, living expenses, insurance, and a travel grant. Eligible candidates must be from specified countries and meet specific criteria.",
+        "links": [
+            "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
+        ]
+    },
+    {
+        "name": "Eiffel Scholarships in France for International Students",
+        "Country": "France",
+        "class": "Masters/PhD Degree",
+        "startdate": "AY 2024-2025",
+        "enddate": "before 10 Jan 2024",
+        "desc": "The Eiffel Excellence Scholarship Program was established by the French Ministry for Europe and Foreign Affairs to enable French higher education institutions to attract top foreign students to enroll in their masters and PhD programs. The scholarship supports future foreign decision-makers in priority areas of study, with opportunities for master's students up to 25 years old from developing countries and PhD students up to 30 years old from developing and industrialized countries. The scholarship includes a monthly allowance and additional coverage for various expenses, excluding tuition fees.",
+        "links": [
+            "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program"
+        ]
+    },
+    {
+        "name": "GREAT Scholarships in UK for International Students",
+        "Country": "UK",
+        "class": "Masters Degree",
+        "startdate": "Sept 2024",
+        "enddate": "varies, Apr-June 2024",
+        "desc": "GREAT Scholarships offer students from 14 countries the opportunity to receive £10,000 towards their tuition fees for a wide range of one-year taught postgraduate courses at 71 universities across the UK. The scholarship is available for students from Bangladesh, China, Egypt, Ghana, Kenya, India, Indonesia, Malaysia, Mexico, Nigeria, Pakistan, Thailand, Turkey, and Vietnam. Eligibility criteria include having an undergraduate degree, meeting English language requirements, and demonstrating motivation and interest in the proposed subject area.",
+        "links": [
+            "https://study-uk.britishcouncil.org/scholarships-funding/great-scholarships"
+        ]
+    },
+    {
+        "name": "DAAD Scholarships in Germany for Development-Related Postgraduate Courses",
+        "Country": "Germany",
+        "class": "Masters/PhD Degree",
+        "startdate": "AY 2025/2026",
+        "enddate": "Aug-Oct 2024",
+        "desc": "The DAAD scholarships offer foreign graduates from development and newly industrialized countries with at least two years of professional experience the opportunity to pursue a postgraduate or Master's degree, and in exceptional cases, a doctoral degree, at a state or state-recognized German university. The scholarships cover a wide range of development-related fields of study. The scholarship includes monthly payments, health insurance, and travel allowances. The duration of the scholarship is 12-24 months for Masters and 42 months for PhD.",
+        "links": [
+            "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?status=3&origin=190&subjectGrps=F&daad=&intention=&q=&page=1&detail=50076777"
+        ]
+    },
+    {
+        "name": "Konrad-Adenauer-Stiftung Scholarships in Germany for International Students",
+        "Country": "Germany",
+        "class": "Masters/PhD Degree",
+        "startdate": "2024",
+        "enddate": "15 July (annual)",
+        "desc": "The Konrad-Adenauer-Stiftung Scholarship Program is aimed at foreign students and doctoral candidates who have completed their studies in their home country and intend to pursue further studies, a doctorate, or a research stay at a German university. The scholarship provides monthly funding, with additional support for research stays abroad, health insurance, and family allowances. The program seeks candidates with strong academic performance, voluntary engagement, and a commitment to democratic values.",
+        "links": [
+            "https://www.kas.de/en/web/begabtenfoerderung-und-kultur/foreign-students"
+        ]
+    },
+    {
+        "name": "The Deutschlandstipendium at German Universities",
+        "Country": "Germany",
+        "class": "Bachelors/Masters Degree",
+        "startdate": "2024",
+        "enddate": "University-dependent (Annual)",
+        "desc": "The Deutschlandstipendium is a public-private partnership scholarship program in Germany, open to high-achieving students worldwide. It supports Bachelors and Masters students at public and state-recognized universities in Germany. Alongside the financial aid of €300 per month, scholarship holders benefit from mentoring programs, networking events, and internships. The scholarship is awarded based on academic excellence, civic engagement, and personal achievements, regardless of personal or parent income.",
+        "links": [
+            "https://www.deutschlandstipendium.de/de/"
+        ]
+    },
+    {
+        "name": "Friedrich Naumann Foundation Scholarship for International Students",
+        "Country": "Germany, Switzerland",
+        "class": "Masters/PhD Degree",
+        "startdate": "April/Oct 2024",
+        "enddate": "31 Oct/30 Apr (Annual)",
+        "desc": "The Friedrich Naumann Foundation Scholarship is aimed at qualified international candidates pursuing their first Master’s or PhD degree at state or state-recognized institutions in Germany, Switzerland, or within the European Union. The scholarship promotes liberal principles and political education, with funding of up to €861 per month, alongside non-material support. It is intended for individuals committed to the political ideas of the German liberal party and who are willing to take responsibility. Knowledge of the German language is essential for the application process.",
+        "links": [
+            "https://www.freiheit.org/de/deutschland/talent-promotion-program"
+        ]
+    },
+    {
+        "name": "University of Calgary International Entrance Scholarship",
+        "Country": "Canada",
+        "class": "Bachelors Degree",
+        "startdate": "Fall 2024",
+        "enddate": "1 Dec 2023/1 Mar 2024 (Annual)",
+        "desc": "The University of Calgary International Entrance Scholarship is a prestigious award recognizing the outstanding accomplishments of international students beginning their undergraduate studies at the University in the Fall term. The scholarship is valued at $15,000 per year, renewable for up to four years, for a total value of $60,000. Recipients must maintain a GPA of 2.60 or higher and meet other eligibility criteria. The scholarship considers both academic excellence and achievements outside the classroom.",
+        "links": [
+            "https://www.ucalgary.ca/registrar/awards/university-calgary-international-entrance-scholarship"
+        ]
+    },
+    {
+        "name": "York University International Student Scholarships",
+        "Country": "Canada",
+        "class": "Bachelors (BS) Degree",
+        "startdate": "September 2024",
+        "enddate": "15 Feb 2024 (Annual)",
+        "desc": "York University offers the Global Leader of Tomorrow Scholarships and the International Entrance Scholarships of Distinction for international students who wish to pursue a full-time undergraduate degree starting in the Fall 2024 term. The scholarships are available for various faculties and are renewable for up to three additional years, provided recipients maintain high academic standing.",
+        "links": [
+            "http://futurestudents.yorku.ca/funding#intl"
+        ]
+    },
+    {
+        "name": "Government of Flanders Master Mind Scholarships for International Students",
+        "Country": "Belgium",
+        "class": "Masters Degree",
+        "startdate": "2024",
+        "enddate": "1 Feb-28 April 2024 (annual)",
+        "desc": "The Flemish Ministry of Education offers Master Mind Scholarships for outstanding international students to pursue a master's degree in Flanders and Brussels. The scholarship includes a grant of €10,000 and a tuition fee waiver, promoting the region as a top study destination.",
+        "links": [
+            "https://www.studyinflanders.be/scholarships/master-mind-scholarships"
+        ]
+    },
+    {
+        "name": "Australia Research Training Program (RTP) Scholarships",
+        "Country": "Australia",
+        "class": "Masters/PhD Degree",
+        "startdate": "2024/2025",
+        "enddate": "varies, April-Oct (annual)",
+        "desc": "The Australia Research Training Program (RTP) provides block grants to higher education providers (HEPs) to support domestic and international students undertaking Research Masters or Doctorate degrees. The scholarship includes tuition fee offsets, stipends for living costs, and allowances for other expenses.",
+        "links": [
+            "https://www.education.gov.au/research-training-program"
+        ]
+    },
+    {
+        "name": "Japanese Government (MEXT) Scholarships for Young Leaders Program at GRIPS",
+        "Country": "Japan",
+        "class": "Masters Degree",
+        "startdate": "October 2022",
+        "enddate": "varies (Annual)",
+        "desc": "Full scholarships are available for exceptionally qualified candidates accepted into the Young Leaders Program at GRIPS. Scholarships cover a monthly stipend, university fees, and travel expenses. Applicants must be recommended by Japanese embassies or other authorities.",
+        "links": [
+            "https://www.grips.ac.jp/en/education/inter_programs/leader/"
+        ]
+    },
+    {
+        "name": "Japanese Government Scholarships for International Research Students",
+        "Country": "Japan",
+        "class": "Masters/PhD Degree",
+        "startdate": "October 2015",
+        "enddate": "varies",
+        "desc": "Scholarships for international students to study in graduate courses at Japanese universities. Includes a monthly allowance, travel costs, and school fees. Applicants must have the nationality of a country with diplomatic relations with Japan and meet specific academic and health requirements.",
+        "links": [
+            "http://www.mext.go.jp/a_menu/koutou/ryugaku/boshu/1346643.htm"
+        ]
+    },
+    {
+        "name": "ADB-Japan Scholarship Program for Developing Countries in Asia and Pacific",
+        "Country": "Japan",
+        "class": "Masters Degree",
+        "startdate": "2024/2025",
+        "enddate": "varies",
+        "desc": "The ADB-Japan Scholarship Program provides full tuition, allowances, medical insurance, and travel expenses for postgraduate studies in development-related fields. Scholarships are available at participating institutions in the Asian and Pacific regions.",
+        "links": [
+            "http://www.adb.org/site/careers/japan-scholarship-program"
+        ]
     }
+                                                        
     
     
     

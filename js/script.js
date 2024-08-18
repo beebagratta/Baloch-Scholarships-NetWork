@@ -4,62 +4,93 @@ document.addEventListener('DOMContentLoaded', function () {
     const scholarshipsContainer = document.querySelector('.scholarship_cont');
     const searchbar = document.getElementById('searchbar');
     let filteredByCountry = [];
+    console.log(myScholarships.length)
 
-    // Function to create the scholarship card and initially hide it
-    
 
     // Function to search for a country
     function searchCountry() {
+        let typingTimer;                // Timer identifier
+        const heroSection=document.querySelector(".heroSection");
+        const mainContent=document.querySelector("main");
+        const doneTypingInterval = 500; // Time in ms (0.5 seconds)
+        
         searchbar.addEventListener('input', function () {
-            const filter = searchbar.value.toLowerCase();
-            const scholarships = document.querySelectorAll('.scholarship-card');
-
-            filteredByCountry = []; // Reset the filtered list
-
-            scholarships.forEach(scholarship => {
-                const country = scholarship.querySelector('.country').textContent.toLowerCase();
-                if (country.includes(filter)) {
-                    scholarship.style.display = 'block';
-                    filteredByCountry.push(scholarship); // Add to the filtered list
-                } else {
-                    scholarship.style.display = 'none';
-                }
-            });
-
-            // If the search bar is empty, hide all cards
-            if (filter === "") {
-                scholarships.forEach(scholarship => {
-                    scholarship.style.display = 'none';
-                });
-                filteredByCountry = []; // Clear the filter
+            if(searchbar.value===""){
+                heroSection.style.display="flex";
+                mainContent.style.overflow="hidden";
+            }else if(searchbar.value !==""){
+                heroSection.style.display="none";
+                mainContent.style.overflow="scroll";
             }
+            clearTimeout(typingTimer);  // Clear the timer on every input
+            typingTimer = setTimeout(() => {
+                const filter = searchbar.value.toLowerCase().trim(); // Get the trimmed value
+                const scholarships = document.querySelectorAll('.scholarship-card');
+                let matchedCountry = false;
+
+                // Reset the filtered list
+                filteredByCountry = [];
+
+                scholarships.forEach(scholarship => {
+                    const country = scholarship.querySelector('.country').textContent.toLowerCase().replace('country: ', '');
+
+                    // Show scholarships only if the input exactly matches a country name
+                    if (filter === country) {
+                        scholarship.style.display = 'block';
+                        filteredByCountry.push(scholarship); // Add to the filtered list
+                        matchedCountry = true;
+                    } else {
+                        scholarship.style.display = 'none';
+                    }
+                });
+
+                // If no exact match is found or input is empty, hide all cards
+                if (!matchedCountry || filter === "") {
+                    scholarships.forEach(scholarship => {
+                        scholarship.style.display = 'none';
+                    });
+                    filteredByCountry = []; // Clear the filter
+                }
+            }, doneTypingInterval);  // Set the delay to execute after typing stops
         });
+        
     }
 
     // Function for class selection
     function classSelector() {
         const selectClass = document.getElementById('selectClass');
-        // Filter scholarships based on selected class
-        selectClass.addEventListener('change', function () {
-            const selectedClass = selectClass.value.toLowerCase();
-
-            // Use the filtered list of scholarships based on the country
-            filteredByCountry.forEach(scholarship => {
-                const scholarshipClasses = scholarship.querySelector('.class').textContent.split(': ')[1].toLowerCase().split(', ');
-                if (selectedClass === 'all' || scholarshipClasses.includes(selectedClass)) {
-                    scholarship.style.display = 'block';
-                } else {
-                    scholarship.style.display = 'none';
-                }
-            });
-
-            // If no class is selected (i.e., 'all'), reset to country filter
-            if (selectedClass === 'all') {
-                filteredByCountry.forEach(scholarship => {
-                    scholarship.style.display = 'block';
+        selectClass.addEventListener("click",()=>{
+            if(searchbar.value===""){
+                alert("Search for a country.")
+            } else if(searchbar.value !==""){
+                selectClass.addEventListener('input', function () {
+                    const selectedClass = selectClass.value.toLowerCase();
+        
+                    // Use the filtered list of scholarships based on the country
+                    filteredByCountry.forEach(scholarship => {
+                        const scholarshipClasses = scholarship.querySelector('.class').textContent.split(': ')[1].toLowerCase().split(', ');
+                        const inputValue = scholarshipClasses.value
+                        if (selectedClass === 'all' || scholarshipClasses.includes(selectedClass)) {
+                            scholarship.style.display = 'block';
+                        } else {
+                            scholarship.style.display = 'none';
+                        }
+                    });
+        
+                    // If no class is selected (i.e., 'all'), reset to country filter
+                    if (selectedClass === 'all') {
+                        filteredByCountry.forEach(scholarship => {
+                            scholarship.style.display = 'block';
+                        });
+                    }
                 });
             }
-        });
+        })
+        // Filter scholarships based on selected class
+        
+
+
+
     }
 
     // Function to show popup
