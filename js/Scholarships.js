@@ -4,8 +4,8 @@ let myScholarships = [
         "Country": "Italy",
         "class": "Engineering",
         "startdate": "January",
-        "enddate": "March",
-        "desc": "Politecnico di Milano (Polimi) is a top-class engineering university in Italy. Online admissions usually start from January to March every year. For Polimi, applications are also accepted between May to July. Admission outcomes are expected from February to May. Successful applicants should start their visa procedures by June to ensure timely processing for the session starting in mid-September or early October.",
+        "enddate": "July",
+        "desc": "Politecnico di Milano (Polimi) is a prestigious engineering university in Italy. Online admissions typically start from January and close by March. For Polimi, applications are also accepted between May and July. Admission outcomes are expected from February to May. Once admitted, students should begin their visa procedures by June to ensure they receive their visa in time for the academic session starting in mid-September or early October. The visa process includes submitting a range of documents such as degree and transcript of bachelor’s degree (attested from HEC and MOFA), intermediate and matric certificates (attested from board, IBCC, MOFA), resume, motivation letter, recommendation letters, passport, and IELTS or English proficiency certificate. Regional financial scholarships, such as the DSU scholarship, are available based on family income and can cover tuition fees, reduced-rate accommodation, food vouchers, and a bi-annual stipend.",
         "links": [
             "https://www.polimi.it/en/prospective-students/",
             "https://www.polimi.it/en/international-prospective-students/"
@@ -17,51 +17,55 @@ let myScholarships = [
         "class": "Engineering, Social Sciences, Humanities, Medicine",
         "startdate": "January",
         "enddate": "March",
-        "desc": "Alma Mater Studiorum - University of Bologna is the oldest university in the world and offers a variety of degree programs. Admissions typically follow a similar timeline as other Italian universities.",
+        "desc": "Alma Mater Studiorum - University of Bologna, the oldest university in the world, offers a variety of degree programs including engineering, social sciences, humanities, and medicine. Admissions typically open in January and close by March. To apply, visit the university’s official admission portal. Required documents include a bachelor’s degree and transcript, high school certificates, resume, motivation letter, recommendation letters, passport, and proof of English proficiency. After securing admission, begin the visa application process immediately to ensure timely processing. Regional scholarships are available and can assist with tuition, accommodation, and other living expenses.",
         "links": [
             "https://www.unibo.it/en/prospective-students",
             "https://www.unibo.it/en/teaching/degree-programmes"
         ]
-    },{
+    },
+    {
         "name": "La Sapienza University of Rome Scholarship",
         "Country": "Italy",
         "class": "Various Degree Programs",
         "startdate": "January",
         "enddate": "March",
-        "desc": "La Sapienza University of Rome is renowned for offering a wide range of degree programs. Admissions and visa procedures align with the general guidelines provided for Italian universities.",
+        "desc": "La Sapienza University of Rome offers a wide range of degree programs. Admissions usually start in January and end by March. Apply online through the university’s admission portal. Required documents include academic transcripts, proof of high school completion, resume, motivation letter, recommendation letters, passport, and proof of English proficiency. After admission, start the visa application process by preparing the necessary documents. Regional financial aid and scholarships are available to support tuition and living costs.",
         "links": [
             "https://www.uniroma1.it/en/pagina-strutturale/home",
             "https://www.uniroma1.it/en/offerta-formativa"
         ]
-    }, {
+    },
+    {
         "name": "Politecnico di Torino Scholarship",
         "Country": "Italy",
         "class": "Engineering",
         "startdate": "January",
         "enddate": "March",
-        "desc": "Politecnico di Torino specializes in engineering programs and follows the standard Italian university admission schedule.",
+        "desc": "Politecnico di Torino is renowned for its engineering programs. Admissions generally open in January and close by March. Apply through the university’s admission portal. Required documents include degree and transcript, high school certificates, resume, motivation letter, recommendation letters, passport, and proof of English proficiency. After admission, initiate the visa application process by preparing the necessary documents. Scholarships based on regional assessments are available to cover tuition fees, accommodation, and other expenses.",
         "links": [
             "https://www.polito.it/en/",
             "https://didattica.polito.it/"
         ]
-    },  {
+    },
+    {
         "name": "University of Padua Scholarship",
         "Country": "Italy",
         "class": "Various Degree Programs",
         "startdate": "January",
         "enddate": "March",
-        "desc": "The University of Padua offers a wide array of degree programs with a rich history of academic excellence.",
+        "desc": "The University of Padua offers diverse degree programs with a strong academic reputation. Admissions typically start in January and end in March. Apply online via the university’s admission portal. Necessary documents include bachelor’s degree and transcript, high school certificates, resume, motivation letter, recommendation letters, passport, and English proficiency proof. Begin the visa application process immediately after admission to ensure timely processing. Regional scholarships are available to support tuition, accommodation, and living expenses.",
         "links": [
             "https://www.unipd.it/en/",
             "https://www.unipd.it/en/education"
         ]
-    },    {
+    },
+    {
         "name": "University of Milan Scholarship",
         "Country": "Italy",
         "class": "General Programs",
         "startdate": "January",
         "enddate": "March",
-        "desc": "The University of Milan is known for offering a variety of general programs, adhering to the standard admission and visa timelines in Italy.",
+        "desc": "The University of Milan provides a variety of general programs. Admissions generally open in January and close by March. Apply online through the university’s admission portal. Required documents include academic transcripts, proof of high school completion, resume, motivation letter, recommendation letters, passport, and English proficiency certificate. After securing admission, start the visa application process by preparing all necessary documents. Scholarships are available based on regional income assessments to cover tuition fees and other expenses.",
         "links": [
             "https://www.unimi.it/en/study",
             "https://www.unimi.it/en"
@@ -73,275 +77,421 @@ let myScholarships = [
         "class": "General Programs",
         "startdate": "January",
         "enddate": "March",
-        "desc": "The University of Turin provides various general programs and follows the typical admission procedures for Italian universities.",
+        "desc": "The University of Turin offers numerous general programs. Admissions typically start in January and end by March. Apply through the university’s admission portal. Required documents include degree and transcript, high school certificates, resume, motivation letter, recommendation letters, passport, and proof of English proficiency. After receiving admission, begin the visa application process by assembling the necessary documents. Regional scholarships are available to assist with tuition fees, accommodation, and other living expenses.",
         "links": [
             "https://en.unito.it/",
             "https://en.unito.it/studying-unito"
         ]
-    },{
-        "name": "Bergamo University Scholarship",
-        "Country": "Italy",
-        "class": "Bachelor/Master",
-        "startdate": "Each Year",
-        "enddate": " Each Year",
-        "desc": "Bergamo University offers various Bachelor and Master programs. After receiving admission, students can apply for a study visa at the Italian Consulate in Karachi. The process includes applying for a Declaration of Value (DoV) and preparing other necessary documents for the visa. Financial scholarships are available based on family income, covering tuition fees, accommodation, food vouchers, and a bi-annual stipend.",
+    },
+    {
+        "name": "Chevening Scholarships",
+        "Country": "United Kingdom",
+        "class": "Master’s",
+        "startdate": "August",
+        "enddate": "November",
+        "desc": "The Chevening Scholarships are the UK government’s global scholarship programme, funded by the Foreign, Commonwealth & Development Office (FCDO) and partner organizations. The scholarships are awarded to individuals with demonstrable leadership potential and excellent academic records. Applications are typically open from August to November each year. The scholarships cover tuition fees, airfare, and a living allowance.",
         "links": [
-            "https://www.unibg.it/",
-            "https://studyportal.com/bachelors",
-            "https://studyportal.com/masters"
-        ]
-    }, {
-        "name": "University of Pavia Scholarship",
-        "Country": "Italy",
-        "class": "Bachelor/Master",
-        "startdate": "Year",
-        "enddate": "Year",
-        "desc": "The University of Pavia provides numerous Bachelor and Master programs. Students can apply for a study visa after admission, following the procedures for obtaining a DoV and preparing other required visa documents. Regional financial scholarships are available, depending on family income, which can include coverage for tuition fees, reduced-rate accommodation, food vouchers, and a stipend.",
-        "links": [
-            "https://www.unipv.eu/site/home.html",
-            "https://studyportal.com/bachelors",
-            "https://studyportal.com/masters"
-        ]
-    },{
-        "name": "University of Rome Tor Vergata Scholarship",
-        "Country": "Italy",
-        "class": "Bachelor/Master",
-        "startdate": "Year",
-        "enddate": "Year",
-        "desc": "University of Rome Tor Vergata offers a variety of Bachelor and Master programs. Post-admission, students can apply for a study visa, including the process of obtaining a DoV. Regional scholarships are available based on family income, offering benefits like tuition fee coverage, discounted accommodation, food vouchers, and a stipend to support students during their studies.",
-        "links": [
-            "https://web.uniroma2.it/en/",
-            "https://studyportal.com/bachelors",
-            "https://studyportal.com/masters"
+            "https://www.chevening.org/"
         ]
     },
     {
-        "name": "Regional Financial Scholarships in Italy",
-        "Country": "Italy",
-        "class": "Bachelor/Master",
-        "startdate": "July",
-        "enddate": "Year",
-        "desc": "Every year around July, you can apply for regional financial scholarships in Italy after acquiring admission to a university. The process involves filling out an online application and preparing income documents in Pakistan, including family income certificates, property possession certificates, FBR income documents, property certificates from relevant authorities, and the FRC from NADRA. These documents must be sent to the Pakistan consulate/Embassy for verification, followed by attestation by the Italian Prefecture. Fellow students in Italy can help with the process. Once these steps are completed, the documents are sent to the regional scholarship authority to complete your application.",
+        "name": "Eiffel Excellence Scholarship Program",
+        "Country": "France",
+        "class": "Master’s, PhD",
+        "startdate": "January",
+        "enddate": "January",
+        "desc": "The Eiffel Excellence Scholarship Program aims to attract top international students to French higher education institutions. Applications are usually open in January each year. The program supports students at the master's and doctoral levels. The scholarship covers tuition fees, monthly stipends, and additional expenses related to studying in France.",
         "links": [
-            "https://studyportal.com/bachelors",
-            "https://studyportal.com/masters"
+            "https://www.campusfrance.org/en/eiffel-scholarship-of-excellence"
+        ]
+    },
+    {
+        "name": "DAAD Scholarships",
+        "Country": "Germany",
+        "class": "Master’s, PhD",
+        "startdate": "March",
+        "enddate": "September",
+        "desc": "The DAAD (German Academic Exchange Service) offers scholarships for international students to study in Germany. The scholarships are available for various levels of study including master’s and doctoral programs. The application period is generally from March to September. The DAAD scholarships cover living expenses, travel costs, and health insurance.",
+        "links": [
+            "https://www.daad.de/en/"
         ]
     },
     {
         "name": "Fulbright Foreign Student Program",
-        "Country": "USA",
-        "class": "Masters/PhD Degrees",
-        "startdate": "Academic Year 2025-2026",
-        "enddate": "Varies",
-        "desc": "The Fulbright Foreign Student Program enables graduate students, young professionals, and artists from abroad to study and conduct research in the United States at U.S. universities or other academic institutions. Approximately 4,000 foreign students from 155 countries receive Fulbright scholarships each year. The scholarship generally covers tuition, airfare, a living stipend, and health insurance, providing funding for the duration of the study. Eligibility and selection procedures vary by country.",
+        "Country": "United States",
+        "class": "Master’s, PhD",
+        "startdate": "May",
+        "enddate": "October",
+        "desc": "The Fulbright Foreign Student Program offers scholarships to international students for master’s and doctoral programs in the United States. The application process typically starts in May and ends in October each year. The scholarships cover tuition, living expenses, and travel costs.",
         "links": [
-            "http://foreign.fulbrightonline.org/about/foreign-fulbright"
-        ]
+            "https://foreign.fulbrightonline.org/"
+        ]
     },
     {
-        "name": "Knight-Hennessy Scholars at Stanford University",
-        "Country": "USA",
-        "class": "Masters/PhD Degree",
-        "startdate": "Autumn 2025",
-        "enddate": "Varies",
-        "desc": "The Knight-Hennessy Scholars program at Stanford University cultivates a diverse, multidisciplinary community of emerging leaders from around the world. It prepares scholars to address complex societal challenges through leadership development, community experiences, and academic enrichment. The program spans all 7 schools at Stanford, offering funding for up to three years for any graduate degree, including tuition, living stipend, and travel costs.",
+        "name": "Rotary Peace Fellowships",
+        "Country": "Various",
+        "class": "Master’s, Certificate",
+        "startdate": "July",
+        "enddate": "November",
+        "desc": "Rotary Peace Fellowships are awarded to individuals pursuing a master’s degree or a professional development certificate in peace and conflict resolution. The application period is typically from July to November each year. The fellowships cover tuition, fees, travel, and living expenses.",
         "links": [
-            "https://knight-hennessy.stanford.edu/"
-        ]
+            "https://www.rotary.org/en/our-programs/peace-fellowships"
+        ]
     },
     {
-        "name": "University of Sydney International Scholarship",
+        "name": "Australian Awards Scholarships",
         "Country": "Australia",
-        "class": "Masters/PhD Degree",
-        "startdate": "2025",
-        "enddate": "Varies",
-        "desc": "The University of Sydney International Scholarship, funded by the University of Sydney, provides a yearly scholarship to high-quality international postgraduate students who wish to study a master’s by research or PhD. The scholarship is valued at $37,207 per annum for 2023 awards and assists with tuition fees and living costs. Eligible students must have an outstanding academic record, research potential, and an unconditional offer of admission or current enrollment in a master’s by research or PhD at the University of Sydney.",
+        "class": "Undergraduate, Master’s, PhD",
+        "startdate": "February",
+        "enddate": "April",
+        "desc": "The Australian Awards Scholarships are offered by the Australian government to international students. These scholarships support undergraduate, master’s, and doctoral programs. Applications are typically open from February to April. The scholarships cover tuition fees, travel expenses, living allowances, and health insurance.",
         "links": [
-            "https://sydney.edu.au/scholarships/e/university-sydney-international-scholarship.html"
-        ]
-    },
-    {
-        "name": "Maastricht University NL-High Potential Scholarships for International Students",
-        "Country": "Netherlands",
-        "class": "Masters Degree",
-        "startdate": "September 2024",
-        "enddate": "Varies",
-        "desc": "The Maastricht University (UM) NL-High Potential Scholarship programme offers 24 full scholarships of €30,000 each academic year for highly talented students from outside the EU/EEA who have been admitted to a Master’s programme at UM. The scholarship covers living expenses, health and liability insurance, visa application costs, tuition fees, and pre-academic training costs. The scholarship is awarded for the duration of the Master’s programme—13 months for a one-year master’s and 25 months for a two-year master’s.",
-        "links": [
-            "https://www.maastrichtuniversity.nl/support/your-studies-begin/coming-maastricht-university-abroad/um-scholarships-students-abroad"
-        ]
-    },
-    {
-        "name": "Lester B. Pearson International Scholarship Program at University of Toronto",
-        "Country": "Canada",
-        "class": "Bachelors Degree",
-        "startdate": "September 2025",
-        "enddate": "Varies",
-        "desc": "The Lester B. Pearson International Scholarship Program at the University of Toronto recognizes international students who demonstrate exceptional academic achievement, creativity, and leadership. The scholarship covers tuition, books, incidental fees, and full residence support for four years. Approximately 37 students will be named Lester B. Pearson Scholars each year.",
-        "links": [
-            "http://future.utoronto.ca/pearson/about#about"
-        ]
-    },
-    {
-        "name": "Swedish Institute Scholarships for Global Professionals",
-        "Country": "Sweden",
-        "class": "Masters Degree",
-        "startdate": "August 2024",
-        "enddate": "28 Feb 2024",
-        "desc": "The Swedish Institute Scholarships for Global Professionals (SISGP) offers scholarships to a large number of master’s programmes at Swedish universities starting in Autumn 2024. The scholarship aims to develop future global leaders who will contribute to the United Nations 2030 Agenda for Sustainable Development and foster positive, sustainable development in their home countries. The scholarship covers full tuition fees, living expenses, insurance, and a travel grant. Eligible candidates must be from specified countries and meet specific criteria.",
-        "links": [
-            "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
-        ]
-    },
-    {
-        "name": "Eiffel Scholarships in France for International Students",
-        "Country": "France",
-        "class": "Masters/PhD Degree",
-        "startdate": "AY 2024-2025",
-        "enddate": "before 10 Jan 2024",
-        "desc": "The Eiffel Excellence Scholarship Program was established by the French Ministry for Europe and Foreign Affairs to enable French higher education institutions to attract top foreign students to enroll in their masters and PhD programs. The scholarship supports future foreign decision-makers in priority areas of study, with opportunities for master's students up to 25 years old from developing countries and PhD students up to 30 years old from developing and industrialized countries. The scholarship includes a monthly allowance and additional coverage for various expenses, excluding tuition fees.",
-        "links": [
-            "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program"
+            "https://www.dfat.gov.au/people-to-people/australia-awards"
         ]
     },
     {
-        "name": "GREAT Scholarships in UK for International Students",
-        "Country": "UK",
-        "class": "Masters Degree",
-        "startdate": "Sept 2024",
-        "enddate": "varies, Apr-June 2024",
-        "desc": "GREAT Scholarships offer students from 14 countries the opportunity to receive £10,000 towards their tuition fees for a wide range of one-year taught postgraduate courses at 71 universities across the UK. The scholarship is available for students from Bangladesh, China, Egypt, Ghana, Kenya, India, Indonesia, Malaysia, Mexico, Nigeria, Pakistan, Thailand, Turkey, and Vietnam. Eligibility criteria include having an undergraduate degree, meeting English language requirements, and demonstrating motivation and interest in the proposed subject area.",
+        "name": "Erasmus Mundus Joint Master Degrees",
+        "Country": "Various",
+        "class": "Master’s",
+        "startdate": "October",
+        "enddate": "January",
+        "desc": "The Erasmus Mundus Joint Master Degrees (EMJMDs) are prestigious, integrated, international study programs offered by a consortium of European universities. The scholarships cover tuition fees, travel costs, and a living allowance. Applications usually open in October and close in January each year.",
         "links": [
-            "https://study-uk.britishcouncil.org/scholarships-funding/great-scholarships"
-        ]
-    },
-    {
-        "name": "DAAD Scholarships in Germany for Development-Related Postgraduate Courses",
-        "Country": "Germany",
-        "class": "Masters/PhD Degree",
-        "startdate": "AY 2025/2026",
-        "enddate": "Aug-Oct 2024",
-        "desc": "The DAAD scholarships offer foreign graduates from development and newly industrialized countries with at least two years of professional experience the opportunity to pursue a postgraduate or Master's degree, and in exceptional cases, a doctoral degree, at a state or state-recognized German university. The scholarships cover a wide range of development-related fields of study. The scholarship includes monthly payments, health insurance, and travel allowances. The duration of the scholarship is 12-24 months for Masters and 42 months for PhD.",
-        "links": [
-            "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?status=3&origin=190&subjectGrps=F&daad=&intention=&q=&page=1&detail=50076777"
-        ]
-    },
-    {
-        "name": "Konrad-Adenauer-Stiftung Scholarships in Germany for International Students",
-        "Country": "Germany",
-        "class": "Masters/PhD Degree",
-        "startdate": "2024",
-        "enddate": "15 July (annual)",
-        "desc": "The Konrad-Adenauer-Stiftung Scholarship Program is aimed at foreign students and doctoral candidates who have completed their studies in their home country and intend to pursue further studies, a doctorate, or a research stay at a German university. The scholarship provides monthly funding, with additional support for research stays abroad, health insurance, and family allowances. The program seeks candidates with strong academic performance, voluntary engagement, and a commitment to democratic values.",
-        "links": [
-            "https://www.kas.de/en/web/begabtenfoerderung-und-kultur/foreign-students"
-        ]
-    },
-    {
-        "name": "The Deutschlandstipendium at German Universities",
-        "Country": "Germany",
-        "class": "Bachelors/Masters Degree",
-        "startdate": "2024",
-        "enddate": "University-dependent (Annual)",
-        "desc": "The Deutschlandstipendium is a public-private partnership scholarship program in Germany, open to high-achieving students worldwide. It supports Bachelors and Masters students at public and state-recognized universities in Germany. Alongside the financial aid of €300 per month, scholarship holders benefit from mentoring programs, networking events, and internships. The scholarship is awarded based on academic excellence, civic engagement, and personal achievements, regardless of personal or parent income.",
-        "links": [
-            "https://www.deutschlandstipendium.de/de/"
-        ]
-    },
-    {
-        "name": "Friedrich Naumann Foundation Scholarship for International Students",
-        "Country": "Germany, Switzerland",
-        "class": "Masters/PhD Degree",
-        "startdate": "April/Oct 2024",
-        "enddate": "31 Oct/30 Apr (Annual)",
-        "desc": "The Friedrich Naumann Foundation Scholarship is aimed at qualified international candidates pursuing their first Master’s or PhD degree at state or state-recognized institutions in Germany, Switzerland, or within the European Union. The scholarship promotes liberal principles and political education, with funding of up to €861 per month, alongside non-material support. It is intended for individuals committed to the political ideas of the German liberal party and who are willing to take responsibility. Knowledge of the German language is essential for the application process.",
-        "links": [
-            "https://www.freiheit.org/de/deutschland/talent-promotion-program"
-        ]
-    },
-    {
-        "name": "University of Calgary International Entrance Scholarship",
-        "Country": "Canada",
-        "class": "Bachelors Degree",
-        "startdate": "Fall 2024",
-        "enddate": "1 Dec 2023/1 Mar 2024 (Annual)",
-        "desc": "The University of Calgary International Entrance Scholarship is a prestigious award recognizing the outstanding accomplishments of international students beginning their undergraduate studies at the University in the Fall term. The scholarship is valued at $15,000 per year, renewable for up to four years, for a total value of $60,000. Recipients must maintain a GPA of 2.60 or higher and meet other eligibility criteria. The scholarship considers both academic excellence and achievements outside the classroom.",
-        "links": [
-            "https://www.ucalgary.ca/registrar/awards/university-calgary-international-entrance-scholarship"
-        ]
-    },
-    {
-        "name": "York University International Student Scholarships",
-        "Country": "Canada",
-        "class": "Bachelors (BS) Degree",
-        "startdate": "September 2024",
-        "enddate": "15 Feb 2024 (Annual)",
-        "desc": "York University offers the Global Leader of Tomorrow Scholarships and the International Entrance Scholarships of Distinction for international students who wish to pursue a full-time undergraduate degree starting in the Fall 2024 term. The scholarships are available for various faculties and are renewable for up to three additional years, provided recipients maintain high academic standing.",
-        "links": [
-            "http://futurestudents.yorku.ca/funding#intl"
-        ]
-    },
-    {
-        "name": "Government of Flanders Master Mind Scholarships for International Students",
-        "Country": "Belgium",
-        "class": "Masters Degree",
-        "startdate": "2024",
-        "enddate": "1 Feb-28 April 2024 (annual)",
-        "desc": "The Flemish Ministry of Education offers Master Mind Scholarships for outstanding international students to pursue a master's degree in Flanders and Brussels. The scholarship includes a grant of €10,000 and a tuition fee waiver, promoting the region as a top study destination.",
-        "links": [
-            "https://www.studyinflanders.be/scholarships/master-mind-scholarships"
-        ]
-    },
-    {
-        "name": "Australia Research Training Program (RTP) Scholarships",
-        "Country": "Australia",
-        "class": "Masters/PhD Degree",
-        "startdate": "2024/2025",
-        "enddate": "varies, April-Oct (annual)",
-        "desc": "The Australia Research Training Program (RTP) provides block grants to higher education providers (HEPs) to support domestic and international students undertaking Research Masters or Doctorate degrees. The scholarship includes tuition fee offsets, stipends for living costs, and allowances for other expenses.",
-        "links": [
-            "https://www.education.gov.au/research-training-program"
-        ]
-    },
-    {
-        "name": "Japanese Government (MEXT) Scholarships for Young Leaders Program at GRIPS",
-        "Country": "Japan",
-        "class": "Masters Degree",
-        "startdate": "October 2022",
-        "enddate": "varies (Annual)",
-        "desc": "Full scholarships are available for exceptionally qualified candidates accepted into the Young Leaders Program at GRIPS. Scholarships cover a monthly stipend, university fees, and travel expenses. Applicants must be recommended by Japanese embassies or other authorities.",
-        "links": [
-            "https://www.grips.ac.jp/en/education/inter_programs/leader/"
-        ]
-    },
-    {
-        "name": "Japanese Government Scholarships for International Research Students",
-        "Country": "Japan",
-        "class": "Masters/PhD Degree",
-        "startdate": "October 2015",
-        "enddate": "varies",
-        "desc": "Scholarships for international students to study in graduate courses at Japanese universities. Includes a monthly allowance, travel costs, and school fees. Applicants must have the nationality of a country with diplomatic relations with Japan and meet specific academic and health requirements.",
-        "links": [
-            "http://www.mext.go.jp/a_menu/koutou/ryugaku/boshu/1346643.htm"
-        ]
-    },
-    {
-        "name": "ADB-Japan Scholarship Program for Developing Countries in Asia and Pacific",
-        "Country": "Japan",
-        "class": "Masters Degree",
-        "startdate": "2024/2025",
-        "enddate": "varies",
-        "desc": "The ADB-Japan Scholarship Program provides full tuition, allowances, medical insurance, and travel expenses for postgraduate studies in development-related fields. Scholarships are available at participating institutions in the Asian and Pacific regions.",
-        "links": [
-            "http://www.adb.org/site/careers/japan-scholarship-program"
+            "https://ec.europa.eu/programmes/erasmus-plus/opportunities/individuals/students/erasmus-mundus-joint-master-degrees_en"
         ]
     }
-                                                        
-    
-    
-    
-    
+    ,
+    {
+        "name": "Coca-Cola Scholars Program",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "August",
+        "enddate": "October",
+        "desc": "The Coca-Cola Scholars Program offers scholarships to high school seniors who have demonstrated leadership, academic achievement, and community service. Applications are usually accepted from August to October each year. The scholarship provides a significant financial award to support undergraduate studies.",
+        "links": [
+            "https://www.coca-colascholarsfoundation.org/"
+        ]
+    },
+    {
+        "name": "Dell Scholars Program",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "December",
+        "enddate": "January",
+        "desc": "The Dell Scholars Program supports students who have overcome significant obstacles to pursue higher education. The application period is generally from December to January each year. The scholarship provides financial support, as well as resources for academic success and career development.",
+        "links": [
+            "https://www.dellscholars.org/"
+        ]
+    },
+    {
+        "name": "Gates Millennium Scholars Program",
+        "Country": "United States",
+        "class": "Undergraduate, Graduate",
+        "startdate": "August",
+        "enddate": "January",
+        "desc": "The Gates Millennium Scholars Program offers scholarships to high-achieving minority students with financial need. The application process typically runs from August to January each year. The program covers tuition, fees, and other educational expenses for undergraduate and graduate studies.",
+        "links": [
+            "https://www.gmsp.org/"
+        ]
+    },
+    {
+        "name": "Jack Kent Cooke Foundation College Scholarship Program",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "September",
+        "enddate": "November",
+        "desc": "The Jack Kent Cooke Foundation College Scholarship Program supports high-achieving students with financial need. Applications are typically accepted from September to November each year. The scholarship provides comprehensive financial support, including tuition, fees, and living expenses.",
+        "links": [
+            "https://www.jkcf.org/our-scholarships/college-scholarship-program/"
+        ]
+    },
+    {
+        "name": "National Merit Scholarship Program",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "June",
+        "enddate": "September",
+        "desc": "The National Merit Scholarship Program recognizes high-achieving high school students based on their PSAT/NMSQT scores. The application period is generally from June to September each year. The scholarships are awarded based on academic performance and are available to support undergraduate studies.",
+        "links": [
+            "https://www.nationalmerit.org/"
+        ]
+    },
+    {
+        "name": "Elks National Foundation Most Valuable Student Scholarship",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "September",
+        "enddate": "November",
+        "desc": "The Elks National Foundation Most Valuable Student Scholarship is awarded to high school seniors who demonstrate leadership, academic achievement, and financial need. The application period typically runs from September to November each year. The scholarship awards vary based on merit and need.",
+        "links": [
+            "https://www.elks.org/enf/scholars/mvs.cfm"
+        ]
+    },
+    {
+        "name": "Burger King Scholars Program",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "October",
+        "enddate": "December",
+        "desc": "The Burger King Scholars Program provides scholarships to high school seniors, college students, and graduate students who demonstrate financial need, academic excellence, and leadership. The application period is generally from October to December each year. The scholarship amount varies and is based on academic achievement and financial need.",
+        "links": [
+            "https://burgerking.scholarsapply.org/"
+        ]
+    },
+    {
+        "name": "Coca-Cola Scholars Program",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "August",
+        "enddate": "October",
+        "desc": "The Coca-Cola Scholars Program offers scholarships to high school seniors who have demonstrated leadership, academic achievement, and community service. Applications are usually accepted from August to October each year. The scholarship provides a significant financial award to support undergraduate studies.",
+        "links": [
+            "https://www.coca-colascholarsfoundation.org/"
+        ]
+    },
+    {
+        "name": "Dell Scholars Program",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "December",
+        "enddate": "January",
+        "desc": "The Dell Scholars Program supports students who have overcome significant obstacles to pursue higher education. The application period is generally from December to January each year. The scholarship provides financial support, as well as resources for academic success and career development.",
+        "links": [
+            "https://www.dellscholars.org/"
+        ]
+    },
+    {
+        "name": "Gates Millennium Scholars Program",
+        "Country": "United States",
+        "class": "Undergraduate, Graduate",
+        "startdate": "August",
+        "enddate": "January",
+        "desc": "The Gates Millennium Scholars Program offers scholarships to high-achieving minority students with financial need. The application process typically runs from August to January each year. The program covers tuition, fees, and other educational expenses for undergraduate and graduate studies.",
+        "links": [
+            "https://www.gmsp.org/"
+        ]
+    },
+    {
+        "name": "Jack Kent Cooke Foundation College Scholarship Program",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "September",
+        "enddate": "November",
+        "desc": "The Jack Kent Cooke Foundation College Scholarship Program supports high-achieving students with financial need. Applications are typically accepted from September to November each year. The scholarship provides comprehensive financial support, including tuition, fees, and living expenses.",
+        "links": [
+            "https://www.jkcf.org/our-scholarships/college-scholarship-program/"
+        ]
+    },
+    {
+        "name": "National Merit Scholarship Program",
+        "Country": "United States",
+        "class": "Undergraduate",
+        "startdate": "June",
+        "enddate": "September",
+        "desc": "The National Merit Scholarship Program recognizes high-achieving high school students based on their PSAT/NMSQT scores. The application period is generally from June to September each year. The scholarships are awarded based on academic performance and are available to support undergraduate studies.",
+        "links": [
+            "https://www.nationalmerit.org/"
+        ]
+    },
+    {
+        "name": "University of St Andrews Scholarships",
+        "Country": "United Kingdom",
+        "class": "Undergraduate, Postgraduate",
+        "startdate": "September",
+        "enddate": "April",
+        "desc": "The University of St Andrews offers a range of scholarships for both undergraduate and postgraduate students. Applications for scholarships generally open in September and close by April. Required documents include academic transcripts, personal statement, recommendation letters, and proof of English proficiency. Scholarships cover tuition fees and sometimes provide additional funding for living expenses.",
+        "links": [
+            "https://www.st-andrews.ac.uk/study/fees-and-funding/scholarships/"
+        ]
+    },
+    {
+        "name": "Erasmus Mundus Joint Master Degrees",
+        "Country": "European Union",
+        "class": "Master’s",
+        "startdate": "September",
+        "enddate": "January",
+        "desc": "Erasmus Mundus Joint Master Degrees are offered by consortia of universities in the European Union. The application period generally runs from September to January each year. These scholarships cover tuition fees, travel costs, subsistence, and insurance. Applicants need to provide academic transcripts, motivation letter, recommendation letters, and proof of English proficiency.",
+        "links": [
+            "https://ec.europa.eu/programmes/erasmus-plus/opportunities/individuals/students_en"
+        ]
+    },
+    {
+        "name": "Swiss Government Excellence Scholarships",
+        "Country": "Switzerland",
+        "class": "Master’s, PhD",
+        "startdate": "August",
+        "enddate": "December",
+        "desc": "The Swiss Government Excellence Scholarships are awarded to international students to promote Swiss higher education. Applications typically start in August and end by December each year. The scholarships cover tuition fees, living expenses, and travel costs. Required documents include academic transcripts, research proposal (for PhD), and proof of language proficiency.",
+        "links": [
+            "https://www.sbfi.admin.ch/sbfi/en/home/services/scholarships.html"
+        ]
+    },
+    {
+        "name": "Hungarian Government Scholarships",
+        "Country": "Hungary",
+        "class": "Undergraduate, Master’s, PhD",
+        "startdate": "February",
+        "enddate": "May",
+        "desc": "The Hungarian Government Scholarships are available for undergraduate, master’s, and doctoral programs in Hungary. The application period generally runs from February to May each year. The scholarships cover tuition fees, accommodation, and a monthly stipend. Applicants need to submit academic transcripts, recommendation letters, and proof of English proficiency.",
+        "links": [
+            "https://stipendiumhungaricum.hu/"
+        ]
+    },
+    {
+        "name": "China Scholarship Council (CSC) Scholarships",
+        "Country": "China",
+        "class": "Undergraduate, Master’s, PhD",
+        "startdate": "April",
+        "enddate": "June",
+        "desc": "The China Scholarship Council (CSC) offers scholarships for international students to study in China. The application period usually runs from April to June each year. Scholarships cover tuition fees, accommodation, and a monthly stipend. Required documents include academic transcripts, recommendation letters, a research proposal (for PhD), and proof of English proficiency.",
+        "links": [
+            "https://www.csc.edu.cn/studyinchina"
+        ]
+    },
+    {
+        "name": "University of St Andrews Scholarships",
+        "Country": "United Kingdom",
+        "class": "Undergraduate, Postgraduate",
+        "startdate": "September",
+        "enddate": "April",
+        "desc": "The University of St Andrews offers a range of scholarships for both undergraduate and postgraduate students. Applications for scholarships generally open in September and close by April. Required documents include academic transcripts, personal statement, recommendation letters, and proof of English proficiency. Scholarships cover tuition fees and sometimes provide additional funding for living expenses.",
+        "links": [
+            "https://www.st-andrews.ac.uk/study/fees-and-funding/scholarships/"
+        ]
+    },
+    {
+        "name": "Erasmus Mundus Joint Master Degrees",
+        "Country": "European Union",
+        "class": "Master’s",
+        "startdate": "September",
+        "enddate": "January",
+        "desc": "Erasmus Mundus Joint Master Degrees are offered by consortia of universities in the European Union. The application period generally runs from September to January each year. These scholarships cover tuition fees, travel costs, subsistence, and insurance. Applicants need to provide academic transcripts, motivation letter, recommendation letters, and proof of English proficiency.",
+        "links": [
+            "https://ec.europa.eu/programmes/erasmus-plus/opportunities/individuals/students_en"
+        ]
+    },
+    {
+        "name": "Swiss Government Excellence Scholarships",
+        "Country": "Switzerland",
+        "class": "Master’s, PhD",
+        "startdate": "August",
+        "enddate": "December",
+        "desc": "The Swiss Government Excellence Scholarships are awarded to international students to promote Swiss higher education. Applications typically start in August and end by December each year. The scholarships cover tuition fees, living expenses, and travel costs. Required documents include academic transcripts, research proposal (for PhD), and proof of language proficiency.",
+        "links": [
+            "https://www.sbfi.admin.ch/sbfi/en/home/services/scholarships.html"
+        ]
+    },
+    {
+        "name": "Hungarian Government Scholarships",
+        "Country": "Hungary",
+        "class": "Undergraduate, Master’s, PhD",
+        "startdate": "February",
+        "enddate": "May",
+        "desc": "The Hungarian Government Scholarships are available for undergraduate, master’s, and doctoral programs in Hungary. The application period generally runs from February to May each year. The scholarships cover tuition fees, accommodation, and a monthly stipend. Applicants need to submit academic transcripts, recommendation letters, and proof of English proficiency.",
+        "links": [
+            "https://stipendiumhungaricum.hu/"
+        ]
+    },
+    {
+        "name": "China Scholarship Council (CSC) Scholarships",
+        "Country": "China",
+        "class": "Undergraduate, Master’s, PhD",
+        "startdate": "April",
+        "enddate": "June",
+        "desc": "The China Scholarship Council (CSC) offers scholarships for international students to study in China. The application period usually runs from April to June each year. Scholarships cover tuition fees, accommodation, and a monthly stipend. Required documents include academic transcripts, recommendation letters, a research proposal (for PhD), and proof of English proficiency.",
+        "links": [
+            "https://www.csc.edu.cn/studyinchina"
+        ]
+    },
+    {
+        "name": "DAAD Scholarships",
+        "Country": "Germany",
+        "class": "Undergraduate, Master’s, PhD",
+        "startdate": "March",
+        "enddate": "June",
+        "desc": "The DAAD Scholarships are offered to international students for studying in Germany. The application period typically runs from March to June each year. These scholarships cover living costs, travel expenses, and health insurance. Required documents include academic transcripts, a research proposal (for PhD), and proof of language proficiency.",
+        "links": [
+            "https://www.daad.de/en/"
+        ]
+    },
+    {
+        "name": "Fulbright Program",
+        "Country": "United States",
+        "class": "Master’s, PhD",
+        "startdate": "May",
+        "enddate": "October",
+        "desc": "The Fulbright Program offers scholarships for international students to study in the United States. The application period generally runs from May to October each year. Scholarships cover tuition fees, living expenses, and travel costs. Applicants need to provide academic transcripts, recommendation letters, a research proposal (for PhD), and proof of English proficiency.",
+        "links": [
+            "https://foreign.fulbrightonline.org/"
+        ]
+    },
+    {
+        "name": "Rhodes Scholarships",
+        "Country": "United Kingdom",
+        "class": "Undergraduate, Postgraduate",
+        "startdate": "July",
+        "enddate": "October",
+        "desc": "The Rhodes Scholarships are available for students pursuing studies at the University of Oxford. The application period typically runs from July to October each year. The scholarships cover full tuition fees, living expenses, and travel costs. Required documents include academic transcripts, recommendation letters, and a personal statement.",
+        "links": [
+            "https://www.rhodeshouse.ox.ac.uk/scholarships/"
+        ]
+    },
+    {
+        "name": "Chevening Scholarships",
+        "Country": "United Kingdom",
+        "class": "Master’s",
+        "startdate": "August",
+        "enddate": "November",
+        "desc": "Chevening Scholarships are offered by the UK government for international students pursuing a Master’s degree in the UK. The application period runs from August to November each year. Scholarships cover full tuition fees, living expenses, and travel costs. Applicants need to provide academic transcripts, a personal statement, and recommendation letters.",
+        "links": [
+            "https://www.chevening.org/"
+        ]
+    },
+    {
+        "name": "Commonwealth Scholarships",
+        "Country": "United Kingdom",
+        "class": "Master’s, PhD",
+        "startdate": "March",
+        "enddate": "July",
+        "desc": "Commonwealth Scholarships are available for students from low and middle-income Commonwealth countries to study in the UK. The application period generally runs from March to July each year. Scholarships cover tuition fees, living costs, and travel expenses. Required documents include academic transcripts, recommendation letters, and proof of English proficiency.",
+        "links": [
+            "https://www.acu.ac.uk/scholarships/commonwealth-scholarships/"
+        ]
+    },
+    {
+        "name": "Netherlands Fellowship Programmes",
+        "Country": "Netherlands",
+        "class": "Master’s, PhD",
+        "startdate": "May",
+        "enddate": "September",
+        "desc": "The Netherlands Fellowship Programmes offer scholarships for international students to study in the Netherlands. The application period typically runs from May to September each year. Scholarships cover tuition fees, living expenses, and travel costs. Applicants need to submit academic transcripts, a research proposal (for PhD), and proof of language proficiency.",
+        "links": [
+            "https://www.nuffic.nl/en/subjects/netherlands-fellowship-programmes/"
+        ]
+    },
+    {
+        "name": "MEXT Scholarships",
+        "Country": "Japan",
+        "class": "Undergraduate, Master’s, PhD",
+        "startdate": "April",
+        "enddate": "June",
+        "desc": "MEXT Scholarships are offered by the Japanese government for international students to study in Japan. The application period usually runs from April to June each year. Scholarships cover tuition fees, living expenses, and travel costs. Required documents include academic transcripts, recommendation letters, and proof of language proficiency.",
+        "links": [
+            "https://www.mext.go.jp/en/"
+        ]
+    },
+    {
+        "name": "Australian Awards Scholarships",
+        "Country": "Australia",
+        "class": "Undergraduate, Master’s, PhD",
+        "startdate": "February",
+        "enddate": "June",
+        "desc": "Australian Awards Scholarships are offered by the Australian government for students from developing countries to study in Australia. The application period generally runs from February to June each year. Scholarships cover tuition fees, living costs, and travel expenses. Required documents include academic transcripts, recommendation letters, and proof of English proficiency.",
+        "links": [
+            "https://www.dfat.gov.au/people-to-people/australian-awards"
+        ]
+    },
 ];
-export{
+export {
     myScholarships
 }
