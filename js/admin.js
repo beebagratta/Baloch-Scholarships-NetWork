@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to ask for password on Admin.html
     function handlePasswordPrompt() {
         // Check if the current page is Admin.html
-        if (window.location.pathname.includes("Admin.html")) {
+        if (window.location.pathname.includes("admin")) {
             // Prompt for password
             const password = prompt("Enter the admin password:");
 
