@@ -1,232 +1,195 @@
-import { myScholarships } from "./Scholarships.js";
+// Import the necessary Firebase modules from the SDKs
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
-document.addEventListener('DOMContentLoaded', function () {
-    const scholarshipsContainer = document.querySelector('.scholarship_cont');
-    const searchbar = document.getElementById('searchbar');
-    const scholarships = document.querySelectorAll('.scholarship-card')
-console.log(myScholarships.length);
+// Run the code once the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
 
-    let filteredByCountry = [];
+    // Get references to elements in the HTML for scholarship container and overlay
+    const scholarshipsContainer = document.querySelector(".scholarship_cont");
+    const overlay = document.querySelector(".overlay"); // Added overlay element reference
 
+    // Firebase configuration details for your web app
+    const firebaseConfig = {
+        apiKey: "AIzaSyDthr_lCcPIt3SumqieuPrrWvDMbGjrQk0",
+        authDomain: "balochscholarshipnetwork.firebaseapp.com",
+        projectId: "balochscholarshipnetwork",
+        storageBucket: "balochscholarshipnetwork.appspot.com",
+        messagingSenderId: "13731205366",
+        appId: "1:13731205366:web:73b7ffb2fb14ee23961cd7",
+        measurementId: "G-ZZDQVTDFGT"
+    };
 
-    // Function to search for a country
-    function searchCountry() {
-        let typingTimer;                // Timer identifier
-        const doneTypingInterval = 500; // Time in ms (0.5 seconds)
-    
-        searchbar.addEventListener('input', function () {
-            clearTimeout(typingTimer);  // Clear the timer on every input
-            typingTimer = setTimeout(() => {
-                const filter = searchbar.value.toLowerCase().trim(); // Get the trimmed value
-                const scholarships = document.querySelectorAll('.scholarship-card');
-                let matchedCountry = false;
-    
-                // Reset the filtered list
-                filteredByCountry = [];
-    
-                scholarships.forEach(scholarship => {
-                    const country = scholarship.querySelector('.country').textContent.toLowerCase().replace('country: ', '');
-    
-                    // Show scholarships only if the input exactly matches a country name
-                    if (filter === country) {
-                        scholarship.style.display = 'block';
-                        filteredByCountry.push(scholarship); // Add to the filtered list
-                        matchedCountry = true;
-                    } else {
-                        scholarship.style.display = 'none';
-                    }
-                });
-    
-                // If no exact match is found or input is empty
-                if (filter === "") {
-                    scholarships.forEach(scholarship => {
-                        // Re-display scholarships that match the current month when input is empty
-                        const startDateElement = scholarship.querySelector('.startDate');
-                        const startDate = startDateElement ? startDateElement.textContent.replace('Start Date : ', '') : '';
-    
-                        if (startDate === currentMonth) {
-                            scholarship.style.display = 'block';
-                        } else {
-                            scholarship.style.display = 'none';
-                        }
-                    });
-                    filteredByCountry = []; // Clear the filter
-                }
-            }, doneTypingInterval);  // Set the delay to execute after typing stops
-        });
-    }
-    // Function for class selection
-    function classSelector() {
-        const selectClass = document.getElementById('selectClass');
-        selectClass.addEventListener("click", () => {
-            if (searchbar.value === "") {
-                alert("Search for a country.")
-            } else if (searchbar.value !== "") {
-                selectClass.addEventListener('input', function () {
-                    const selectedClass = selectClass.value.toLowerCase();
+    // Initialize Firebase app and Firestore database
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-                    // Use the filtered list of scholarships based on the country
-                    filteredByCountry.forEach(scholarship => {
-                        const scholarshipClasses = scholarship.querySelector('.class').textContent.split(': ')[1].toLowerCase().split(', ');
-                        const inputValue = scholarshipClasses.value
-                        if (selectedClass === 'all' || scholarshipClasses.includes(selectedClass)) {
-                            scholarship.style.display = 'block';
-                        } else {
-                            scholarship.style.display = 'none';
-                        }
-                    });
-
-                    // If no class is selected (i.e., 'all'), reset to country filter
-                    if (selectedClass === 'all') {
-                        filteredByCountry.forEach(scholarship => {
-                            scholarship.style.display = 'block';
-                        });
-                    }
-                });
-            }
-        })
-        // Filter scholarships based on selected class
-
-
-
-
-    }
-    // Function to show popup
+    // Function to display a popup with full scholarship details when a card is clicked
     function showPopup(scholarship) {
+        // Create a new div element to represent the popup
         const popup = document.createElement('div');
-        popup.style.display = "none";
-        popup.classList.add('popup');
-        const overlay = document.querySelector(".overlay");
-        scholarshipsContainer.addEventListener("click", () => {
-            popup.style.display = "flex";
-            overlay.style.display = "flex";
-        });
+        popup.classList.add('popup'); // Add the 'popup' class for styling
 
-        popup.innerHTML =
-            `<div class="popup-content">
-                <button class="close-popup">&times;</button>
-                <h2>${scholarship.name}</h2>
-                <p><strong>Country:</strong> ${scholarship.Country}</p>
-                <p><strong>Class:</strong> ${scholarship.class}</p>
-                <p><strong>Start Date:</strong> ${scholarship.startdate}</p>
-                <p><strong>End Date:</strong> ${scholarship.enddate}</p>
-                <p><strong>Description:</strong> ${scholarship.desc}</p>
-                <div class="links">
-                    <strong>Links:</strong>
-                    ${scholarship.links.map(link => `<p><a href="${link}" target="_blank">${link}</a></p>`).join('')}
-                </div>
-            </div>`
-            ;
+        // Insert scholarship details inside the popup
+        popup.innerHTML = `
+        <div class="popup-content">
+            <button class="close-popup">&times;</button> <!-- Close button -->
+            <h2>${scholarship.Name}</h2>
+            <p><strong>Country:</strong> ${scholarship.Country}</p>
+            <p><strong>Class:</strong> ${scholarship.Class}</p>
+            <p><strong>Start Date:</strong> ${scholarship.StartDate}</p>
+            <p><strong>End Date:</strong> ${scholarship.EndDate}</p>
+            <p><strong>Description:</strong> ${scholarship.Description}</p>
+            <a href="${scholarship.Link}" target="_blank">Apply Here</a>
+        </div>
+    `;
 
-        // Add event listener to close popup
+        // Display the popup and overlay
+        popup.style.display = "flex";
+        overlay.style.display = "flex";
+
+        // Add event listener to close the popup when the close button is clicked
         popup.querySelector('.close-popup').addEventListener('click', () => {
-            popup.remove();
-            overlay.style.display = "none";
+            popup.remove(); // Remove the popup from the DOM
+            overlay.style.display = "none"; // Hide the overlay
         });
 
-        // Append popup to the body
+        // Append the popup to the body so it displays over other elements
         document.body.appendChild(popup);
     }
-    // Function to hide default template
-    function HideTemplete() {
-        const templete = document.querySelectorAll(".templete");
-        templete.forEach(temp => { temp.style.display = "none"; });
+
+    // Function to add a new scholarship to Firestore
+
+
+    // Function to display a single scholarship card on the homepage
+    function displayScholarship(scholarship, id) {
+        // Create a new div element for the scholarship card
+        const newdiv = document.createElement("div");
+
+        // Set the inner HTML to display Name, Country, and Start Date
+        newdiv.innerHTML = `
+        <div class="name"><strong>Name:</strong> ${scholarship.Name}</div>
+        <div class="country"><strong>Country:</strong> ${scholarship.Country}</div>
+        <div class="startDate"><strong>Class:</strong> ${scholarship.Class}</div>
+    `;
+        // Add the 'scholarship-card' class to the div for styling
+        newdiv.classList.add("scholarship-card");
+
+        // Append the card to the scholarship container
+        scholarshipsContainer.append(newdiv);
+
+        // Add event listener to show popup when a card is clicked
+        newdiv.addEventListener("click", () => showPopup(scholarship));
     }
-    // Function for Navbar functionality
+
+    // Function to load all scholarships from Firestore and display them
+    async function loadScholarships() {
+        try {
+            // Retrieve all documents from the 'scholarships' collection in Firestore
+            const querySnapshot = await getDocs(collection(db, "scholarships"));
+
+            // Loop through each document and display the scholarships
+            querySnapshot.forEach((doc) => {
+                const scholarship = doc.data(); // Get the scholarship data
+                console.log(scholarship); // Log the scholarship data for debugging
+                displayScholarship(scholarship, doc.id); // Display each scholarship
+            });
+        } catch (e) {
+            // Handle errors if loading fails
+            console.error("Error retrieving scholarships: ", e.message);
+        }
+    }
+
+    // Function to handle the navbar functionality for small devices
     function Navbar() {
-        // NavBar for small devices
+        // Add event listener to show the navbar when the menu icon is clicked
         document.getElementById('menu').addEventListener('click', function () {
-            document.querySelector('.navbar').style.display = 'flex';
-            document.getElementById('menu').style.display = 'none';
-            document.getElementById('close').style.display = 'flex';
-            document.querySelector('.navbar').classList.add('slideIn');
+            document.querySelector('.navbar').style.display = 'flex'; // Show navbar
+            document.getElementById('menu').style.display = 'none'; // Hide menu icon
+            document.getElementById('close').style.display = 'flex'; // Show close icon
+            document.querySelector('.navbar').classList.add('slideIn'); // Add sliding animation
         });
 
+        // Add event listener to hide the navbar when the close icon is clicked
         document.getElementById('close').addEventListener('click', function () {
-            document.querySelector('.navbar').style.display = 'none';
-            document.getElementById('menu').style.display = 'flex';
-            document.getElementById('close').style.display = 'none';
+            document.querySelector('.navbar').style.display = 'none'; // Hide navbar
+            document.getElementById('menu').style.display = 'flex'; // Show menu icon
+            document.getElementById('close').style.display = 'none'; // Hide close icon
         });
     }
-    function addScholarship(scholarship) {
-        const card = document.createElement('div');
-        card.classList.add('scholarship-card');
-        // Add name, country, and class to the card
-        card.innerHTML = `
-            <div class="name">${scholarship.name}</div>
-            <div class="country">Country: ${scholarship.Country}</div>
-            <div class="class">Class: ${scholarship.class}</div>
-            <div class="startDate">Start Date : ${scholarship.startdate}</div>
-        `;
-    
-        const date = new Date();
-        const newMonth = date.getMonth();
-        let currentMonth = "";
-    
-        // Switch case for all months
-        switch (newMonth) {
-            case 0:
-                currentMonth = "January";
-                break;
-            case 1:
-                currentMonth = "February";
-                break;
-            case 2:
-                currentMonth = "March";
-                break;
-            case 3:
-                currentMonth = "April";
-                break;
-            case 4:
-                currentMonth = "May";
-                break;
-            case 5:
-                currentMonth = "June";
-                break;
-            case 6:
-                currentMonth = "July";
-                break;
-            case 7:
-                currentMonth = "August";
-                break;
-            case 8:
-                currentMonth = "September";
-                break;
-            case 9:
-                currentMonth = "October";
-                break;
-            case 10:
-                currentMonth = "November";
-                break;
-            case 11:
-                currentMonth = "December";
-                break;
+
+    // Function to hide specific elements, such as templates (optional)
+    function HideTemplete() {
+        const templete = document.querySelectorAll(".templete");
+        templete.forEach(temp => { temp.style.display = "none"; }); // Hide all template elements
+    }
+    HideTemplete(); // Call the function to hide templates
+
+    // Function to filter and display scholarships by country using the search bar
+    function searchCountry() {
+        let typingTimer;  // Declare typingTimer to track input pauses
+        const doneTypingInterval = 500; // Time in ms (0.5 seconds) to wait after typing
+
+        // Get reference to the search bar
+        const searchbar = document.querySelector("#searchbar");
+
+        // Check if the search bar element exists
+        if (!searchbar) {
+            console.error("Searchbar element not found");
+            return;
         }
-    
-        // Compare scholarship startdate with the current month
-        if (scholarship.startdate === currentMonth) {
-            card.style.display = "block";
-            document.querySelector(".currentScholarships").style.display="flex";
-        } else {
-            card.style.display = "none";
-            document.querySelector(".currentScholarships").style.display="flex";
-        }
-    
-        // Append card to the container
-        const scholarshipsContainer = document.querySelector('.scholarship_cont');
-        scholarshipsContainer.appendChild(card);
-    
-        // Add event listener to show popup
-        card.addEventListener('click', () => {
-            showPopup(scholarship);
+
+        // Add event listener for when the user types in the search bar
+        searchbar.addEventListener('input', function () {
+            console.log("Searching...");
+
+            // Reset the typing timer on each input
+            clearTimeout(typingTimer);
+
+            // Start a timer to filter scholarships once typing has stopped
+            typingTimer = setTimeout(() => {
+                const filter = searchbar.value.toLowerCase().trim(); // Get the user's input
+                const scholarships = document.querySelectorAll('.scholarship-card'); // Get all displayed scholarships
+
+                // Filter scholarships based on the user's input (matching the country)
+                scholarships.forEach(scholarship => {
+                    const country = scholarship.querySelector('.country').textContent.toLowerCase().replace('country: ', '');
+                    // Show scholarships if the country matches, otherwise hide them
+                    if (filter === "" || filter === country) {
+                        scholarship.style.display = 'block'; // Show the card
+                        HideTemplete(); // Hide any templates
+                    } else {
+                        scholarship.style.display = 'none'; // Hide the card
+                        HideTemplete(); // Hide templates
+                    }
+                });
+
+                // Optionally log if no scholarships match the search criteria
+                const visibleScholarships = document.querySelectorAll('.scholarship-card[style*="display: block"]');
+                if (visibleScholarships.length === 0 && filter !== "") {
+                    console.log("No scholarships match the search criteria.");
+                }
+            }, doneTypingInterval);  // Wait before filtering after typing stops
         });
     }
-    
-    // Call functions
-    Navbar();
-    classSelector();
+
+    // Call searchCountry to enable search functionality
     searchCountry();
-    HideTemplete();
-    // Load all scholarships
-    myScholarships.forEach(addScholarship);
+
+    // Call the Navbar function to add the navbar functionality
+    Navbar();
+
+    loadScholarships();
+    document.addEventListener("keydown", function (event) {
+        if (event.ctrlKey && event.shiftKey && event.code === 'KeyC') {
+            event.preventDefault();
+            alert("Opening Developer Tools is not allowed on this page.");
+        }
+    });
+
+    // Disable right-click on the page and show an alert
+    document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+        alert("Right-clicking is disabled on this page.");
+    });
 });
