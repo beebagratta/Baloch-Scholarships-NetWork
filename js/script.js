@@ -11,15 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Firebase configuration details for your web app
     const firebaseConfig = {
-        apiKey: "AIzaSyDthr_lCcPIt3SumqieuPrrWvDMbGjrQk0",
-        authDomain: "balochscholarshipnetwork.firebaseapp.com",
-        projectId: "balochscholarshipnetwork",
-        storageBucket: "balochscholarshipnetwork.appspot.com",
-        messagingSenderId: "13731205366",
-        appId: "1:13731205366:web:73b7ffb2fb14ee23961cd7",
-        measurementId: "G-ZZDQVTDFGT"
-    };
-
+        apiKey: "AIzaSyCsVNh41ZgBVUMeoK01gaBkd0AxT57F9mo",
+        authDomain: "balochscholarshipnetwork-99fd9.firebaseapp.com",
+        projectId: "balochscholarshipnetwork-99fd9",
+        storageBucket: "balochscholarshipnetwork-99fd9.appspot.com",
+        messagingSenderId: "543212144164",
+        appId: "1:543212144164:web:642a05a4b2f8ff03affab1",
+        measurementId: "G-FQC5BR7H23"
+      };
     // Initialize Firebase app and Firestore database
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
@@ -59,8 +58,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Function to add a new scholarship to Firestore
+    // Function to handle class filtering
+    function handleClassSelector() {
+        const selectClass=document.querySelector("#selectClass")
+        if (!selectClass) {
+            console.error("Class selector element not found");
+            return;
+        }
 
+        selectClass.addEventListener('input', function () {
+            const selectedClass = selectClass.value.toLowerCase();
+            const scholarship_card = document.querySelectorAll('.scholarship-card');
 
+            scholarship_card.forEach(scholarship => {
+                const scholarshipClassesElement = scholarship.querySelector('.class');
+                if (scholarshipClassesElement) {
+                    const scholarshipClasses = scholarshipClassesElement.textContent.toLowerCase().split(', ');
+
+                    if (selectedClass === 'all' || scholarshipClasses.includes(selectedClass)) {
+                        scholarship.style.display = 'block';
+                    } else {
+                        scholarship.style.display = 'none';
+                    }
+                } else {
+                    scholarship.style.display = 'none';
+                }
+            });
+
+            if (selectedClass === 'all') {
+                filteredByCountry.forEach(scholarship => {
+                    scholarship.style.display = 'block';
+                });
+            }
+        });
+    }
+    handleClassSelector()
     // Function to display a single scholarship card on the homepage
     function displayScholarship(scholarship, id) {
         // Create a new div element for the scholarship card
@@ -68,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Set the inner HTML to display Name, Country, and Start Date
         newdiv.innerHTML = `
-        <div class="name"><strong>Name:</strong> ${scholarship.Name}</div>
+        <div class="name">${scholarship.Name}</div>
         <div class="country"><strong>Country:</strong> ${scholarship.Country}</div>
         <div class="startDate"><strong>Class:</strong> ${scholarship.Class}</div>
     `;
