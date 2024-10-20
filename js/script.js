@@ -112,17 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             // Show the "Current Month Scholarships" message
+            currentMonthMessage.textContent = "Current Month Scholarships";
             currentMonthMessage.style.display = filteredByMonth ? 'block' : 'none';
         } else {
-            // If search bar has a value, show all scholarships
+            // If search bar has a value, filter scholarships by country
             const scholarshipCards = document.querySelectorAll('.scholarship-card');
             scholarshipCards.forEach(card => {
-                card.style.display = 'block'; // Show all scholarships when search is active
+                const country = card.getAttribute("data-country").toLowerCase();
+                card.style.display = country.includes(searchQuery) ? 'block' : 'none'; // Show scholarships that match the search query
             });
-            currentMonthMessage.style.display = 'none';
+            currentMonthMessage.style.display = 'none'; // Hide current month message when searching
         }
     }
-    
+
     // Run filterScholarships on search input
     searchbar.addEventListener('input', filterScholarships);
 
