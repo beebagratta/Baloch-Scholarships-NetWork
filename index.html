@@ -31,9 +31,9 @@
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="#">Scholarship</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="./layouts/About.html">About Us</a></li>
+                <li><a href="./layouts/ContactUs.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -42,58 +42,43 @@
         <div>
             <div id="searchbox">
                 <input type="text" id="searchbar" placeholder="Search Country">
-                <div>
-                    <span>Select Class</span>
-                    <select name="selectClass" id="selectClass">
-                        <option value="all">All</option>
-                        <option value="Engineering">Engineering</option>
-                        <option value="Computer Science">Computer Science</option>
-                        <option value="Business">Business</option>
-                        <option value="Medicine">Medicine</option>
-                        <option value="Law">Law</option>
-                        <option value="Art">Art</option>
-                        <option value="Science">Science</option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Social Sciences">Social Sciences</option>
-                        <option value="Humanities">Humanities</option>
-                    </select>
-                </div>
             </div>
-            <p class="current-month-message" style="display: none;">Currneoen</p>
-            <div class="scholarship_cont">
-                <!-- Example of Scholarship Cards -->
-                <div  class="scholarship-card templete"  data-name="Scholarship A" data-country="Country A"
-                    data-class="Class A" data-description="Description A" style="display: none;">
-                    <div class="name">Scholarship A</div>
-                    <div class="country">Country: Country A</div>
-                    <div class="class">Class: Class A</div>
-                    <div class="startDate">Start Date: Start Date</div>
-                </div>
-                <div  class="scholarship-card templete" data-name="Scholarship B" data-country="Country B"
-                    data-class="Class B" data-description="Description B" style="display: none;">
-                    <div class="name">Scholarship B</div>
-                    <div class="country">Country: Country B</div>
-                    <div class="class">Class: Class B</div>
-                </div>
-                <!-- <div class="scholarship-card templete" style="display: none;">
+            <h2 class="current-month-message" style="display: none; color: rgb(60, 60, 197); text-align: center; ">
+                Current Scholarship</h3>
+                <div class="scholarship_cont">
+                    <!-- Example of Scholarship Cards -->
+                    <div class="scholarship-card templete" data-name="Scholarship A" data-country="Country A"
+                        data-class="Class A" data-description="Description A" style="display: none;">
+                        <div class="name">Scholarship A</div>
+                        <div class="country">Country: Country A</div>
+                        <div class="class">Class: Class A</div>
+                        <div class="startDate">Start Date: Start Date</div>
+                    </div>
+                    <div class="scholarship-card templete" data-name="Scholarship B" data-country="Country B"
+                        data-class="Class B" data-description="Description B" style="display: none;">
+                        <div class="name">Scholarship B</div>
+                        <div class="country">Country: Country B</div>
+                        <div class="class">Class: Class B</div>
+                    </div>
+                    <!-- <div class="scholarship-card templete" style="display: none;">
                     <div class="name"><strong></strong></div>
                     <div class="country"><strong>Country:</strong> </div>
                     <div class="startDate"><strong>Class:</strong> </div>
                 </div> -->
-          
-            </div>
-            <!-- Popup Container -->
-            <div class="popup" id="popup">
-                <div class="popup-content">
-                    <button class="close-popup" id="close-popup">X</button>
-                    <div class="popup-details">
-                        <h2 id="popup-name"></h2>
-                        <p id="popup-country"></p>
-                        <p id="popup-class"></p>
-                        <p id="popup-description"></p>
+
+                </div>
+                <!-- Popup Container -->
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <button class="close-popup" id="close-popup">X</button>
+                        <div class="popup-details">
+                            <h2 id="popup-name"></h2>
+                            <p id="popup-country"></p>
+                            <p id="popup-class"></p>
+                            <p id="popup-description"></p>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div class="overlay"></div>
     </main>
@@ -102,15 +87,13 @@
 
     <!-- Import the JS file as a module -->
     <script type="module" src="./js/script.js"></script>
+    <script src="./js/Navbar.js"></script>
 
     <!-- Add Firebase SDK scripts -->
-   <!-- Add Firebase SDK scripts -->
-<script type="module" src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"></script>
-<script type="module" src="https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"></script>
+    <!-- Add Firebase SDK scripts -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"></script>
 
-
-
-   <script src="./js/Scholarships.js"></script>
 </body>
 
 </html>

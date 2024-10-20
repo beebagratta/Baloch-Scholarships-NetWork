@@ -1,12 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-import { getFirestore, collection, getDocs, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
-import { uniqueScholarships } from './Scholarships.js'; // Adjust the path as necessary
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
 // Run the code once the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
     // Get references to elements in the HTML for scholarship container and overlay
     const scholarshipsContainer = document.querySelector(".scholarship_cont");
     const overlay = document.querySelector(".overlay");
+    const searchbar = document.getElementById("searchbar");
+    const currentMonthMessage = document.querySelector(".current-month-message");
 
     // Firebase configuration details for your web app
     const firebaseConfig = {
@@ -52,17 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Function to display a single scholarship card
-    function displayScholarship(scholarship, id) {
-        const newdiv = document.createElement("div");
-        newdiv.innerHTML = `
+    function displayScholarship(scholarship) {
+        const newDiv = document.createElement("div");
+        newDiv.innerHTML = `
             <div class="name">${scholarship.Name}</div>
             <div class="country"><strong>Country:</strong> ${scholarship.Country}</div>
             <div class="class"><strong>Class:</strong> ${scholarship.Class}</div>
+            <div class="startDate"><strong>Start Date:</strong> ${scholarship.StartDate}</div>
         `;
-        newdiv.classList.add("scholarship-card");
-        newdiv.setAttribute("data-country", scholarship.Country);
-        scholarshipsContainer.append(newdiv);
-        newdiv.addEventListener("click", () => showPopup(scholarship));
+        newDiv.classList.add("scholarship-card");
+        newDiv.setAttribute("data-country", scholarship.Country);
+        scholarshipsContainer.append(newDiv);
+        newDiv.addEventListener("click", () => showPopup(scholarship));
     }
 
     // Load scholarships from Firestore
@@ -73,78 +75,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
             querySnapshot.forEach((doc) => {
                 const scholarship = doc.data();
-                displayScholarship(scholarship, doc.id);
+                displayScholarship(scholarship);
             });
         } catch (e) {
             console.error("Error retrieving scholarships: ", e.message);
         }
     }
 
-    // Function to filter scholarships by class
-    function filterByClass() {
-        const selectClass = document.getElementById("selectClass");
-        selectClass.addEventListener("change", () => {
-            const selectedClass = selectClass.value;
-            const scholarshipCards = document.querySelectorAll('.scholarship-card');
+    // Function to get the current month name
+    function getCurrentMonth() {
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        const currentDate = new Date();
+        return monthNames[currentDate.getMonth()];
+    }
 
+    // Function to filter scholarships based on the current month or search input
+    function filterScholarships() {
+        const searchQuery = searchbar.value.trim().toLowerCase();
+        const currentMonth = getCurrentMonth();
+        let filteredByMonth = false;
+
+        // If search bar is empty, filter scholarships by the current month
+        if (searchQuery === "") {
+            const scholarshipCards = document.querySelectorAll('.scholarship-card');
             scholarshipCards.forEach(card => {
-                const cardClass = card.querySelector('.class').textContent.split(': ')[1];
-                // Show card if the class matches the selected class or if 'All' is selected
-                if (selectedClass === "all" || cardClass === selectedClass) {
+                const startDate = card.querySelector('.startDate').textContent;
+                if (startDate.includes(currentMonth)) {
                     card.style.display = 'block';
+                    filteredByMonth = true;
                 } else {
                     card.style.display = 'none';
                 }
             });
-        });
-    }
 
-    // Function to search scholarships by country
-    function searchScholarships() {
-        const searchbar = document.getElementById("searchbar");
-        searchbar.addEventListener('input', () => {
-            const searchTerm = searchbar.value.toLowerCase(); // Get the search term
+            // Show the "Current Month Scholarships" message
+            currentMonthMessage.style.display = filteredByMonth ? 'block' : 'none';
+        } else {
+            // If search bar has a value, show all scholarships
             const scholarshipCards = document.querySelectorAll('.scholarship-card');
-
             scholarshipCards.forEach(card => {
-                const cardCountry = card.querySelector('.country').textContent.toLowerCase();
-                // Show card if the country matches the search term
-                if (cardCountry.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = 'block'; // Show all scholarships when search is active
             });
-        });
-    }
-
-    // Function to add scholarships to Firestore using the scholarship name as the document ID
-    async function addScholarshipsToFirestore(scholarships) {
-        try {
-            for (const scholarship of scholarships) {
-                await setDoc(doc(db, "scholarships", scholarship.name), {
-                    Name: scholarship.name,
-                    Country: scholarship.Country,
-                    Class: scholarship.class,
-                    StartDate: scholarship.startdate,
-                    EndDate: scholarship.enddate,
-                    Description: scholarship.desc,
-                    Link: scholarship.links,
-                });
-                console.log(`Added scholarship with ID (name): ${scholarship.name}`);
-            }
-            console.log("All scholarships added successfully.");
-        } catch (error) {
-            console.error("Error adding scholarships: ", error.message);
+            currentMonthMessage.style.display = 'none';
         }
     }
+    
+    // Run filterScholarships on search input
+    searchbar.addEventListener('input', filterScholarships);
 
-    // Call the function to add scholarships to Firestore
-    addScholarshipsToFirestore(uniqueScholarships);
-
-    // Call loadScholarships and set up event listeners
+    // Load scholarships and set up event listeners
     loadScholarships().then(() => {
-        filterByClass(); // Add the filtering functionality
-        searchScholarships(); // Add the search functionality
+        filterScholarships(); // Call filterScholarships to show current month scholarships by default
     });
 });
