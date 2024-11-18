@@ -39,35 +39,33 @@
     </header>
 
     <main>
-        <div>
-            <div id="searchbox">
-                <input type="text" id="searchbar" placeholder="Search Country">
-            </div>
-            <h2 class="current-month-message" style="display: none; color: rgb(60, 60, 197); text-align: center; ">
-                Current Scholarship</h3>
-                <div class="scholarship_cont">
-                    <!-- Example of Scholarship Cards -->
-                    <div class="scholarship-card templete" data-name="Scholarship A" data-country="Country A"
-                        data-class="Class A" data-description="Description A" style="display: none;">
-                        <div class="name">Scholarship A</div>
-                        <div class="country">Country: Country A</div>
-                        <div class="class">Class: Class A</div>
-                        <div class="startDate">Start Date: Start Date</div>
-                    </div>
-                    <div class="scholarship-card templete" data-name="Scholarship B" data-country="Country B"
-                        data-class="Class B" data-description="Description B" style="display: none;">
-                        <div class="name">Scholarship B</div>
-                        <div class="country">Country: Country B</div>
-                        <div class="class">Class: Class B</div>
-                    </div>
-                    <!-- <div class="scholarship-card templete" style="display: none;">
-                    <div class="name"><strong></strong></div>
-                    <div class="country"><strong>Country:</strong> </div>
-                    <div class="startDate"><strong>Class:</strong> </div>
-                </div> -->
 
+        <div id="searchbox">
+            <input type="text" id="searchbar" placeholder="Search Country">
+        </div>
+        <h2 class="current-month-message" style="display: none; color: rgb(60, 60, 197); text-align: center; ">
+            Current Scholarship</h3>
+            <div class="scholarship_cont">
+                <!-- Example of Scholarship Cards -->
+                <div class="scholarship-card templete" data-name="Scholarship A" data-country="Country A"
+                    data-class="Class A" data-description="Description A" style="display: none;">
+                    <div class="name">Scholarship A</div>
+                    <div class="country">Country: Country A</div>
+                    <div class="class">Class: Class A</div>
+                    <div class="endDate">EndDate</div>
+                    <div class="startDate">Start Date: Start Date</div>
                 </div>
-                <!-- Popup Container -->
+                <div class="scholarship-card templete" data-name="Scholarship B" data-country="Country B"
+                    data-class="Class B" data-description="Description B" style="display: none;">
+                    <div class="name">Scholarship B</div>
+                    <div class="country">Country: Country B</div>
+                    <div class="class">Class: Class B</div>
+                </div>
+
+
+            </div>
+            <!-- Popup Container -->
+            <div class="pop-up-cont">
                 <div class="popup" id="popup">
                     <div class="popup-content">
                         <button class="close-popup" id="close-popup">X</button>
@@ -75,12 +73,14 @@
                             <h2 id="popup-name"></h2>
                             <p id="popup-country"></p>
                             <p id="popup-class"></p>
+
                             <p id="popup-description"></p>
                         </div>
                     </div>
                 </div>
-        </div>
-        <div class="overlay"></div>
+            </div>
+
+            <div class="overlay"></div>
     </main>
 
 

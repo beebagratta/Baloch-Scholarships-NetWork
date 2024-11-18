@@ -4,8 +4,8 @@ header {
     height: 70px;
     width: 100%;
   
-    z-index: 1000;
-    background: linear-gradient(90deg, rgba(36, 198, 220, 1) 0%, rgba(81, 74, 157, 1) 100%);
+    z-index: 10000;
+    background:linear-gradient(90deg, rgb(47, 207, 228) 0%, rgba(81, 74, 157, 1) 100%); ;
     transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
     display: flex;
     flex-direction: row;
@@ -131,11 +131,12 @@ header nav ul li a:hover {
         height: 80vh;
         display: none;
         flex-direction: column;
-        background: rgba(36, 198, 220, 0.9);
+        background: rgba(36, 198, 220, 1);
         position: fixed;
         top: 70px;
         left: 0;
         width: 100%;
+        z-index: 1000;
     }
 
     header nav ul {

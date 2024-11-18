@@ -33,9 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button class="close-popup">&times;</button>
                 <h2>${scholarship.Name}</h2>
                 <p><strong>Country:</strong> ${scholarship.Country}</p>
-                <p><strong>Class:</strong> ${scholarship.Class}</p>
+                <p><strong>Levels:</strong> ${scholarship.Levels}</p>
                 <p><strong>Start Date:</strong> ${scholarship.StartDate}</p>
                 <p><strong>End Date:</strong> ${scholarship.EndDate}</p>
+                <p><strong>Fields:</strong> ${scholarship.Fields}</p>
                 <p><strong>Description:</strong> ${scholarship.Description}</p>
                 <a href="${scholarship.Link}" target="_blank">Apply Here</a>
             </div>
@@ -58,8 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
         newDiv.innerHTML = `
             <div class="name">${scholarship.Name}</div>
             <div class="country"><strong>Country:</strong> ${scholarship.Country}</div>
-            <div class="class"><strong>Class:</strong> ${scholarship.Class}</div>
+            <div class="class"><strong>Class:</strong> ${scholarship.Levels}</div>
             <div class="startDate"><strong>Start Date:</strong> ${scholarship.StartDate}</div>
+            <div class="endDate"><strong>Enddate:</strong> ${scholarship.EndDate}</div>
         `;
         newDiv.classList.add("scholarship-card");
         newDiv.setAttribute("data-country", scholarship.Country);
@@ -82,49 +84,54 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Function to get the current month name
     function getCurrentMonth() {
-        const monthNames = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
         const currentDate = new Date();
-        return monthNames[currentDate.getMonth()];
+        return currentDate.getMonth() + 1; // Returns the current month as a number (1 for January, 12 for December)
     }
-
-    // Function to filter scholarships based on the current month or search input
+    
+    
     function filterScholarships() {
+        const currentMonth = getCurrentMonth(); // Returns current month as a number (e.g., 4 for April)
         const searchQuery = searchbar.value.trim().toLowerCase();
-        const currentMonth = getCurrentMonth();
         let filteredByMonth = false;
-
+    
+        const scholarshipCards = document.querySelectorAll('.scholarship-card');
+    
         // If search bar is empty, filter scholarships by the current month
         if (searchQuery === "") {
-            const scholarshipCards = document.querySelectorAll('.scholarship-card');
             scholarshipCards.forEach(card => {
-                const startDate = card.querySelector('.startDate').textContent;
-                if (startDate.includes(currentMonth)) {
+                const startDateStr = card.querySelector('.startDate')?.textContent || "";
+                const endDateStr = card.querySelector('.endDate')?.textContent || "";
+    
+                // Parse start and end dates (day/month format)
+                const [startDay, startMonth] = startDateStr.split("/").map(Number);
+                const [endDay, endMonth] = endDateStr.split("/").map(Number);
+    
+                // Filter scholarships that are ongoing in the current month
+                if (startMonth <= currentMonth && endMonth >= currentMonth) {
                     card.style.display = 'block';
                     filteredByMonth = true;
                 } else {
                     card.style.display = 'none';
                 }
             });
-
+    
             // Show the "Current Month Scholarships" message
-            currentMonthMessage.textContent = "Current Month Scholarships";
+            currentMonthMessage.textContent = "Ongoing Scholarships";
             currentMonthMessage.style.display = filteredByMonth ? 'block' : 'none';
         } else {
             // If search bar has a value, filter scholarships by country
-            const scholarshipCards = document.querySelectorAll('.scholarship-card');
             scholarshipCards.forEach(card => {
                 const country = card.getAttribute("data-country").toLowerCase();
                 card.style.display = country.includes(searchQuery) ? 'block' : 'none'; // Show scholarships that match the search query
             });
-            currentMonthMessage.style.display = 'none'; // Hide current month message when searching
+    
+            // Hide the "Current Month Scholarships" message when searching
+            currentMonthMessage.style.display = 'none';
         }
     }
-
+    
+    
     // Run filterScholarships on search input
     searchbar.addEventListener('input', filterScholarships);
 

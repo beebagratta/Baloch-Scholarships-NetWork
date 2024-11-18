@@ -1,3 +1,4 @@
+
 /* General Reset */
 * {
     margin: 0;
@@ -19,8 +20,9 @@ main {
     position: relative;
     padding-top: 70px;
     /* Avoid overlap with header */
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
+    overflow: auto;
 }
 .currentScholarships{
     width: 100vw;
@@ -39,7 +41,7 @@ main {
     top: 0;
     left: 0;
     display: none; /* Hidden by default */
-    overflow: hidden; /* Hide scrollbars */
+    overflow: auto; /* Hide scrollbars */
 }
 
 /* Popup Styles */
@@ -52,15 +54,19 @@ main {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    height: fit-content;
+    max-height: 86%;
     width: 90%;
-    max-width: 600px;
+    max-width: 900px;
     z-index: 1001; /* Ensure popup is above overlay */
     animation: fadeIn 0.3s ease-in-out;
     display: none; /* Hidden by default */
+    overflow: auto;
 }
 
 .popup-content {
     position: relative;
+    overflow: auto;
 }
 
 .close-popup {
