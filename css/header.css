@@ -128,7 +128,7 @@ header nav ul li a:hover {
     header nav {
         align-items: start;
         justify-content: start;
-        height: 80vh;
+        height: 40vh;
         display: none;
         flex-direction: column;
         background: rgba(36, 198, 220, 1);

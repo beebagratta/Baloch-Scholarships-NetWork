@@ -24,6 +24,21 @@ main {
     width: 100vw;
     overflow: auto;
 }
+.MoneyEarningSect {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 400px; /* Default width */
+    background: #0ba17e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 16px; /* Default font size */
+    line-height: 1.5;
+}
+
 .currentScholarships{
     width: 100vw;
     display: none;
@@ -146,6 +161,7 @@ main {
 }
 
 
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -221,7 +237,15 @@ main {
 
     .close-popup {
         font-size: 18px;
+    }  .MoneyEarningSect {
+        width: 250px; /* Reduce width */
+        right: 10px; /* Adjust position */
+        bottom: 10px; /* Adjust position */
+        padding: 15px; /* Reduce padding */
+        font-size: 14px; /* Slightly smaller font */
+        background: #29caa5;
     }
+
 }
 
 /* For small phones (up to 480px) */
@@ -245,5 +269,14 @@ main {
 
     .close-popup {
         font-size: 16px;
+    }
+    .MoneyEarningSect {
+        width: 90%; /* Use most of the screen width */
+        left: 5%; /* Center horizontally */
+        right: 5%; /* Center horizontally */
+        bottom: 10px; /* Adjust position */
+        padding: 10px; /* Reduce padding */
+        font-size: 12px; /* Smaller font size */
+        background: #29caa5;
     }
 }
